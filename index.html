@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="https://kit.fontawesome.com/a6a726722e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="clock.js"></script>
+    <script defer src="user-name.js"></script>
+    <script defer src="todo-list.js"></script>
+    <script defer src="backimg.js"></script>
+    <script defer src="weather.js"></script>
+</head>
+<body>
+    
+    <section class="backImg-Container">
+    </section>
+    <section class="time-Container">
+    </section>
+    <section class="greeting-Container">
+        <form action="" class="greeting-form">
+            <input type="text" placeholder="Type your name">
+        </form>
+        <span class="greeting-text"></span>
+    </section>
+    <section class="todo-Container">
+        <span class="todo-title"> What is your main focus for Today?</span>
+        <form action="" class="todo-form">
+            <input type="text">
+        </form>
+        <div class="pending-finished">
+            <div class="pending-lists">
+                <span class="lists-title">Pending</span>
+                <ul id="pending" class="todo-lists__pending">
+                </ul>
+            </div>
+            <div class="finished-lists">
+                <span class="lists-title">Finished</span>
+                <ul id="finished" class="todo-lists__finished">
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="weather-Container">
+        <span class="weahter__icons">
+            <i class="fas fa-cloud-sun weather__icon Cloud-sun"></i>
+            <i class="fas fa-cloud weather__icon Clouds"></i>
+            <i class="far fa-sun weather__icon Sun Clear"></i>
+            <i class="fas fa-cloud-showers-heavy weather__icon  Rain"></i>
+        </span>
+    </section>
+    <section class="sunAndNight">
+        <button class="weatherBtn sun-btn"><i class="far fa-sun"></i></button>
+        <button class="weatherBtn night-btn"><i class="fas fa-cloud-moon"></i></button>
+    </section>
+
+    
+</body>
+</html>
