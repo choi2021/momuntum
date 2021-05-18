@@ -1,170 +1,181 @@
+@import "color-btn.css";
+@import "greeting.css";
 :root{
     /*color*/
     --white-color:#FDFEFF;
-    --orange-color:#F7C117;
+    --pink-color:#F3CCD1 ;
     --gray-color:#052856;
+    --green-color:#A2B69F;
+    --blue-color:hsl(196, 69%, 81%);
+    --yellow-color:#EADB80;
+
 
     /*size*/
-    --font-size-time:80px;
-    --font-size-input:15px;
-    --font-size-greeting-text:35px;
-    --base-space:50px;
-    --padding-input:10px;
+    --font-greeting-size:30px;
+    --font-name-size:20px;
+    --font-time-size:50px;
+    --base-space:180px;
+    
+    /*border*/
+    --border:3px solid var(--white-color);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+button{
+    background-color: transparent;
+    border:var(--border);
+    color:white;
+    cursor: pointer;
 }
 
 body{
-    padding: 0;
     margin:0;
+    padding: 30px;
     width:100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--white-color);
-}
-
-
-.backImg-Container{
-    height: 100%;
-    width:100%;
-    position: absolute;
-    top:0;
-    z-index: -1;
-}
-
-.backImg-Container img{
-    width:100%;
-    height: 100%;
-}
-
-.time-Container{
-    font-size:var(--font-size-time)
-}
-
-.greeting-Container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom:var(--base-space);
-}
-
-.greeting-form,
-.greeting-text{
-    display: none;
-}
-
-.greeting-showing{
-    display: block;
-}
-
-.greeting-form input,
-.todo-form input{
-    border:none;
-    outline:none;
-    background-color: transparent;
-    color:var(--white-color);
-    padding:var(--padding-input);
-    border-bottom:2px solid var(--white-color);
-}
-
-.todo-form input{
-    margin-bottom:50px;
-}
-
-.pending-finished{
-    width:100%;
-    display: flex;
     justify-content: space-between;
+    color: var(--white-color);
+    background-color:var(--pink-color);
 }
 
-.pending-lists,
-.finished-lists{
-    border:1px solid var(--white-color);
-    padding:30px;
-    text-align: center;
-}
-
-.todo-Container{
-    width:80%;
+.time-Pending-list{
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.todo-item{
-    margin-right:10px;
 }
 
 .lists-title{
-    text-transform: uppercase;
+    text-shadow: 2px 3px 0px #7A7A7A;
+    font-size: 20px;
 }
 
-.todo-lists__pending,
-.todo-lists__finished{
-    padding:0px;
-}
-
-.todo-lists__pending button,
-.todo-lists__finished button{
-    border:1px solid var(--white-color);
-    background-color: transparent;
-    color:var(--white-color);
-    cursor:pointer
-}
-
-
-.greeting-form input::placeholder{
-    color:white;
-    font-size:var(--font-size-input);
+.time-container{
     text-align: center;
-    
+    border:var(--border);
+    font-size:var(--font-time-size);
+    padding:10px;
+    margin-bottom: var(--base-space);
 }
 
-.greeting-text{
-    font-size: var(--font-size-greeting-text);
+.pending-lists{
+    border:var(--border);
+    text-align: center;
+    padding:10px;
+    overflow-y: auto;
+    height: 400px;
+    width:250px;
+}
+
+.todo-lists__pending{
+    padding: 0;
+    list-style: none;
+}
+
+.name-weahter-todo-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name-container{
+    margin:0;
+    border:var(--border);
+    width:200px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:30px;
+}
+
+.name-text{
+    font-size:var(--font-name-size);
     text-transform: uppercase;
+    text-shadow: 2px 3px 0px #7A7A7A;
 }
 
-
-.weather-Container{
-    position:fixed;
-    top:10px;
-    right:20px;
-
+.weather-container{
+    padding:10px;
+    text-align: center;
+    border:var(--border);
+    margin-bottom:50px;
 }
 
-
-.weather__icon{
-    display: none;
+.main-img-container{
+    height: 300px;
+    width:500px;
+    border:var(--border);
+    margin-bottom:50px;
 }
 
-.icon-showing{
+.main-img{
+    width:100%;
+}
+
+.todo-get{
+    border:var(--border);
+    padding:25px;
+    text-align: center;
+}
+
+.todo-title{
     display: inline-block;
+    margin-bottom:15px;
 }
 
-.sunAndNight{
-    position:absolute;
-    top:50%;
-    left:30%;
-}
-
-.weatherBtn{
+.todo-input{
     background-color: transparent;
-    border:none;
-    cursor:pointer;
-    font-size:30px;
-    display: none;
+    border:var(--border);
+    padding:3px;
+    color:var(--white-color);
+    outline:none;
+    text-align: center;
 }
 
-.sun-btn{
-    color:var(--orange-color);
+.todo-input::placeholder{
+    text-align: center;
+    color:var(--white-color);
 }
 
-.night-btn{
-    color:var(--gray-color);
+.music-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    border:var(--border);
+    padding:10px;
 }
 
-.btn-showing{
-    display: inline-block;
+.music-header{
+    margin-bottom:10px;
+}
+
+.music-img{
+    width:180px;
+    height: 180px;
+}
+
+
+
+.music-finished-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.finished-lists{
+    border:var(--border);
+    text-align: center;
+    padding:10px;
+    overflow-y: auto;
+    height: 400px;
+    width:250px;
+}
+
+.todo-lists__finished{
+    list-style: none;
+    padding:0;
 }

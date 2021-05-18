@@ -1,0 +1,74 @@
+.greeting-Container{
+    position:absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:inherit;
+}
+
+@keyframes moveContainer {
+    from{
+        transform: none;
+    }
+    to{
+        transform: translate(0,-100%) ;
+    }
+}
+
+@keyframes fontShrink{
+    from{
+        font-size:var(--font-greeting-size);
+    }
+    to{
+        font-size: var(--font-name-size);
+    }
+}
+
+.greeting-form{
+    width:100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting-text{
+    font-size:50px;
+    border:2px solid var(--white-color);
+    display: inline-block;
+    padding: 10px;
+}
+
+.greeting-animationMove{
+    animation:moveContainer 2s ease forwards;
+    animation-delay: 2s;
+}
+
+.greeting-shrinkText{
+    animation:fontShrink 2s ease forwards;
+}
+
+.greeting-cover{
+    display: none;
+}
+
+.greeting-form input{
+    background-color: transparent;
+    border:3px solid var(--white-color);
+    outline: none;
+    padding:50px;
+    width: 50%;
+    height: 10%;
+    text-align: center;
+    color:var(--white-color);
+    font-size: var(--font-greeting-size);
+}
+
+.greeting-form input::placeholder{
+    color:var(--white-color);
+    font-size:var(--font-greeting-size);
+    text-align: center;
+}

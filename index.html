@@ -4,58 +4,81 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script defer src="https://kit.fontawesome.com/a6a726722e.js" crossorigin="anonymous"></script>
+    <title>Momentum</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="clock.js"></script>
-    <script defer src="user-name.js"></script>
-    <script defer src="todo-list.js"></script>
-    <script defer src="backimg.js"></script>
+    <script src="https://kit.fontawesome.com/a6a726722e.js" crossorigin="anonymous"></script>
+    <script defer src="greeting.js"></script>
+    <script defer src="color-btn.js"></script>
+    <script defer src="time.js"></script>
     <script defer src="weather.js"></script>
 </head>
 <body>
-    
-    <section class="backImg-Container">
-    </section>
-    <section class="time-Container">
-    </section>
     <section class="greeting-Container">
         <form action="" class="greeting-form">
-            <input type="text" placeholder="Type your name">
+            <input type="text" placeholder="Please let us know your name" >
         </form>
         <span class="greeting-text"></span>
     </section>
-    <section class="todo-Container">
-        <span class="todo-title"> What is your main focus for Today?</span>
-        <form action="" class="todo-form">
-            <input type="text">
-        </form>
-        <div class="pending-finished">
-            <div class="pending-lists">
-                <span class="lists-title">Pending</span>
-                <ul id="pending" class="todo-lists__pending">
-                </ul>
-            </div>
-            <div class="finished-lists">
-                <span class="lists-title">Finished</span>
-                <ul id="finished" class="todo-lists__finished">
-                </ul>
-            </div>
+
+    <section class="time-Pending-list">
+        <div class="time-container">00:00</div>
+        <div class="pending-lists">
+            <span class="lists-title">Pending</span>
+            <ul id="pending" class="todo-lists__pending">
+                <li>
+                    <span>sdjsd</span>
+                    <button class="delete-btn">Delete</button>
+                    <button class="finish-btn">Finished</button>
+                </li>
+            </ul>
         </div>
     </section>
-    <section class="weather-Container">
-        <span class="weahter__icons">
-            <i class="fas fa-cloud-sun weather__icon Cloud-sun"></i>
-            <i class="fas fa-cloud weather__icon Clouds"></i>
-            <i class="far fa-sun weather__icon Sun Clear"></i>
-            <i class="fas fa-cloud-showers-heavy weather__icon  Rain"></i>
-        </span>
+    <section class="name-weahter-todo-list">
+        <div class="name-container">
+            <span class="name-text"></span>
+        </div>
+        <div class="weather-container">
+        </div>
+        <div class="main-img-container">
+            <img class="main-img" src="img/backimg.gif" alt="">
+        </div>
+        <div class="todo-get">
+            <span class="todo-title"> What is your main focus for Today?</span>
+            <form action="" class="todo-form">
+                <input type="text" class="todo-input" placeholder="Here👋">
+            </form>
+        </div>
     </section>
-    <section class="sunAndNight">
-        <button class="weatherBtn sun-btn"><i class="far fa-sun"></i></button>
-        <button class="weatherBtn night-btn"><i class="fas fa-cloud-moon"></i></button>
+    <section class="music-finished-list">
+        <section class="music-container">
+            <header class="music-header">
+                오늘의 인디
+            </header>
+            <div class="music-img-container">
+                <img class="music-img" src="img/멋지게인사하는법.PNG" alt="">
+            </div>
+            <div class="music-btns">
+                <button class="music-btn music-start"><i class="fas fa-play"></i></button>
+                <button class="music-btn music-stop"><i class="fas fa-stop"></i></button>
+            </div>
+        </section>
+        <div class="finished-lists">
+            <span class="lists-title">Finished</span>
+            <ul id="finished" class="todo-lists__finished">
+                <li>
+                    <span>sdjsd</span>
+                    <button class="delete-btn">Delete</button>
+                    <button class="finish-btn">Finished</button>
+                </li>
+            </ul>
+        </div>
     </section>
 
-    
+    <section class="color-btns">
+        <button class="colorBtn pink" data-key="color" data-value="pink"></button>
+        <button class="colorBtn blue" data-key="color" data-value="blue"></button>
+        <button class="colorBtn yellow" data-key="color" data-value="yellow"></button>
+    </section>
+
 </body>
 </html>
