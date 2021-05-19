@@ -106,14 +106,15 @@ body{
 }
 
 .main-img-container{
-    height: 300px;
-    width:500px;
+    height: 400px;
+    width: 600px;
     border:var(--border);
     margin-bottom:50px;
 }
 
 .main-img{
     width:100%;
+    height: 100%;
 }
 
 .todo-get{

@@ -1,0 +1,12 @@
+{
+    "music":[{
+        "song":"music/나무-카더가든.mp3",
+        "img":"img/나무-카더가든.png"
+    },{
+        "song":"music/난치병-하림.mp3",
+        "img":"img/난치병-하림.png"
+    },{
+        "song":"music/우주를건너-백예린.mp3",
+        "img":"img/우주를건너-백예린.png"
+    }]
+}
