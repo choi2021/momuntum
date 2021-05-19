@@ -15,6 +15,7 @@ function getRanNum(num) {
 function setSong(music, random) {
     const song = new Audio;
     song.src = music[random].song;
+    song.volume = 0.3;
     song.autoplay = true;
     startBtn.addEventListener("click",()=> onClickStart(song));
     stopBtn.addEventListener("click",()=> onClickStop(song));

@@ -26,9 +26,14 @@
 
 button{
     background-color: transparent;
-    border:var(--border);
-    color:white;
+    border:none;
     cursor: pointer;
+    color:var(--white-color);
+    transition: transform 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.1);
 }
 
 body{
@@ -43,6 +48,7 @@ body{
 }
 
 .time-Pending-list{
+    text-shadow: 2px 3px 0px #7A7A7A;
     display: flex;
     flex-direction: column;
 }
@@ -74,6 +80,15 @@ body{
     list-style: none;
 }
 
+.todo__list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.todo__text{
+    flex:1 1 70%;
+}
+
 .name-weahter-todo-list{
     display: flex;
     flex-direction: column;
@@ -99,6 +114,7 @@ body{
 }
 
 .weather-container{
+    text-shadow: 2px 3px 0px #7A7A7A;
     padding:10px;
     text-align: center;
     border:var(--border);
@@ -118,6 +134,7 @@ body{
 }
 
 .todo-get{
+    text-shadow: 2px 3px 0px #7A7A7A;
     border:var(--border);
     padding:25px;
     text-align: center;
@@ -143,6 +160,7 @@ body{
 }
 
 .music-container{
+    text-shadow: 2px 3px 0px #7A7A7A;
     display: flex;
     flex-direction: column;
     align-items: center;
