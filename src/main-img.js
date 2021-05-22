@@ -3,7 +3,7 @@ const TOTALIMAGE = 3;
 
 
 function getImage(num) {
-    if (num === 0) {
+    if (num === 0|| num===1) {
         mainContainer.innerHTML = `<img class="main-img" src="img/${num}.gif" alt="">`
         return;
     }

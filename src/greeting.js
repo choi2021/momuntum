@@ -5,6 +5,7 @@ const greetingForm = document.querySelector(".greeting-form");
 const greetingInput = greetingForm.querySelector("input");
 const greetingText = document.querySelector(".greeting-text");
 const nameText = document.querySelector(".name-text");
+const nameContainer = document.querySelector(".name-container");
 
 const USER_LS = "user";
 
@@ -12,18 +13,19 @@ function saveName(name) {
     localStorage.setItem(USER_LS, name);
 }
 
-function shrinkName() {
-    greetingText.classList.add("greeting-shrinkText")
+function sendName() {
+    greetingText.style.animation = `sendName 5s ease forwards`;
 }
 
-function moveName() {
-    greetingContainer.classList.add("greeting-animationMove");
+function getName() {
+    nameContainer.style.animation = `getName 2s ease forwards`;
 }
 
 function setName(name) {
     setTimeout(() => {
         greetingContainer.remove();
         nameText.innerText = `Welcome ${name}`;
+        getName();
     }, 5000);
 }
 
@@ -31,8 +33,6 @@ function showName(name) {
     greetingForm.classList.add("greeting-cover");
     greetingText.classList.remove("greeting-cover");
     greetingText.innerText = `Welcome ${name}`;
-    shrinkName();
-    moveName();
     setName(name);
 }
 
@@ -40,6 +40,7 @@ function onSubmit(event) {
     event.preventDefault();
     const name = greetingInput.value;
     showName(name);
+    sendName();
     saveName(name);
     greetingInput.value = '';
 }

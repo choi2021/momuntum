@@ -1,30 +1,35 @@
 .greeting-Container{
     position:absolute;
     top:0;
+    left:0;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:inherit;
+    background-color:inherit; 
 }
 
-@keyframes moveContainer {
+@keyframes sendName {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(0.5) rotateY(360deg);
+    }
+    100%{
+        transform: scale(0.5) translateY(-1000px) ;
+    }
+}
+
+@keyframes getName{
     from{
+        transform: translateY(-500px) ;
+    }
+    to{
         transform: none;
     }
-    to{
-        transform: translate(0,-100%) ;
-    }
-}
 
-@keyframes fontShrink{
-    from{
-        font-size:var(--font-greeting-size);
-    }
-    to{
-        font-size: var(--font-name-size);
-    }
 }
 
 .greeting-form{
@@ -37,18 +42,9 @@
 
 .greeting-text{
     font-size:50px;
-    border:2px solid var(--white-color);
+    border:4px solid var(--white-color);
     display: inline-block;
     padding: 10px;
-}
-
-.greeting-animationMove{
-    animation:moveContainer 2s ease forwards;
-    animation-delay: 2s;
-}
-
-.greeting-shrinkText{
-    animation:fontShrink 2s ease forwards;
 }
 
 .greeting-cover{

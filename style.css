@@ -33,10 +33,11 @@ button{
 }
 
 button:hover{
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 body{
+    box-sizing: border-box;
     margin:0;
     padding: 30px;
     width:100vw;
@@ -62,7 +63,6 @@ body{
     text-align: center;
     border:var(--border);
     font-size:var(--font-time-size);
-    padding:10px;
     margin-bottom: var(--base-space);
 }
 
@@ -80,7 +80,8 @@ body{
     list-style: none;
 }
 
-.todo__list{
+.pending__list,
+.finished__list{
     display: flex;
     justify-content: space-around;
 }
@@ -113,19 +114,60 @@ body{
     text-shadow: 2px 3px 0px #7A7A7A;
 }
 
+
 .weather-container{
+    position: relative;
+    width: 100%;
+    align-items: center;
     text-shadow: 2px 3px 0px #7A7A7A;
-    padding:10px;
+    padding:20px;
     text-align: center;
+    margin-bottom:10px;
+}
+
+.weather__temp{
+    position: absolute;
+    left:-100px;
+    top:0px;
+    display: inline-block;
+    padding:20px;
     border:var(--border);
-    margin-bottom:50px;
+    font-size:17px;
+    visibility: hidden;
+}
+
+.weather__summary{
+    flex: 1 1 50%;
+    display: inline-block;
+    margin:0 20px;
+    padding:20px 30px;
+    border:var(--border);
+    font-size:18px;
+}
+
+.weather__recommend{
+    position: absolute;
+    right:-100px;
+    top:0px;
+    padding:13px;    
+    border:var(--border);
+    text-align: center;   
+    visibility: hidden; 
+}
+
+.weather__recommend-Youtube{
+    font-size: 50px;
+}
+
+.weather__visible{
+    visibility: visible;
 }
 
 .main-img-container{
     height: 400px;
     width: 600px;
     border:var(--border);
-    margin-bottom:50px;
+    margin-bottom:20px;
 }
 
 .main-img{
@@ -197,4 +239,20 @@ body{
 .todo-lists__finished{
     list-style: none;
     padding:0;
+}
+
+.todo-getanimation{
+    animation:scaleUp 2s ease-in-out;
+}
+
+@keyframes scaleUp {
+    0%{
+        transform: none;
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: none;
+    }
 }

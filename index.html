@@ -8,20 +8,20 @@
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a6a726722e.js" crossorigin="anonymous"></script>
-    <script defer src="greeting.js"></script>
-    <script defer src="color-btn.js"></script>
-    <script defer src="time.js"></script>
-    <script defer src="weather.js"></script>
-    <script defer src="music.js"></script>
-    <script defer src="main-img.js"></script>
-    <script defer src="todo.js"></script>
+    <script defer src="src/greeting.js"></script>
+    <script defer src="src/color-btn.js"></script>
+    <script defer src="src/time.js"></script>
+    <script defer src="src/weather.js"></script>
+    <script defer src="src/music.js"></script>
+    <script defer src="src/main-img.js"></script>
+    <script defer src="src/todo.js"></script>
 </head>
 <body>
-    <section class="greeting-Container">
+    <section class="greeting-Container ">
         <form action="" class="greeting-form">
             <input type="text" placeholder="🤞 Please let us know your name 🤞" >
         </form>
-        <span class="greeting-text"></span>
+        <span class="greeting-text "></span>
     </section>
 
     <section class="time-Pending-list">
@@ -38,6 +38,17 @@
             <span class="name-text"></span>
         </div>
         <div class="weather-container">
+            <span class="weather__temp">
+            </span>
+            <div class="weather__summary">
+                <button><i class="fas fa-arrow-left weather__temp-btn"></i></button>
+                <span class="weather__summary__text">${json}℃ & ${json}</span>
+                <button><i class="fas fa-arrow-right weather__recommend-btn"></i></button>
+            </div>
+            <div class="weather__recommend">
+                <header class="weather__recommend__header">Recommended SetList</header>
+                <a class="weather__recommend-url" href="#"><button class="weather__recommend-Youtube"><i class="fab fa-youtube"></i></button></a>
+            </div>
         </div>
         <div class="main-img-container">
         </div>
