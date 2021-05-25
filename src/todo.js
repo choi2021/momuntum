@@ -21,70 +21,89 @@ function saveTodo(kind) {
     }
 }
 
-function getTodo(item) {
+function animationTodo(item) {
     if (item === 'pending') {
-        pendingContainer.classList.add("todo-getanimation");
-        setTimeout(() => {
-            pendingContainer.classList.remove("todo-getanimation"); 
-        }, 2000);
+        putAnimation(pendingContainer);
     } else if (item === 'finished') {
-        finishedContainer.classList.add("todo-getanimation");
-        setTimeout(() => {
-            finishedContainer.classList.remove("todo-getanimation");
-        }, 2000);
+        putAnimation(finishedContainer);
     }
 }
 
-function makeTodo(text, item) {
-    const li = document.createElement("li");
-    const span = document.createElement("span");
+function putAnimation(container) {
+    container.classList.add("todo-getanimation");
+    setTimeout(() => {
+        container.classList.remove("todo-getanimation"); 
+    }, 2000);
+}
+
+function getDelbtn() {
     const delBtn = document.createElement("button");
-    span.innerText = `${text}`;
-    span.setAttribute("class", "todo__text");
     delBtn.setAttribute("class", "todo__delete-btn");
     delBtn.innerText = `❌`;
+    return delBtn;
+}
+
+function getFinishedBtn() {
+    const finishBtn = document.createElement("button");
+    finishBtn.innerText = `👍`;
+    finishBtn.setAttribute("class", "todo__finish-btn");
+    return finishBtn;
+}
+
+function getText(text) {
+    const span = document.createElement("span");
+    span.innerText = `${text}`;
+    span.setAttribute("class", "todo__text");
+    return span;
+}
+
+function getList(classname,span,btn){
+    const li = document.createElement("li");
+    li.setAttribute("class", classname);
+    li.appendChild(span);
+    li.appendChild(btn);
+    return li;
+}
+
+function updateTodo(array,text,id) {
+    const obj = {
+        text,
+        id: id
+    }
+    array.push(obj);
+}
+
+function makeTodo(text, item) {
+    const span = getText(text);
+    const delBtn = getDelbtn();
     if (item == 'pending') {
-        const btns = document.createElement("div");
         const pendingId = PENDING.length + 1;
         delBtn.id = pendingId;
-        const finishBtn = document.createElement("button");
-        finishBtn.innerText = `👍`;
-        finishBtn.setAttribute("class", "todo__finish-btn");
+        const finishBtn = getFinishedBtn();
         finishBtn.id = pendingId;
-        li.id = pendingId;
-        li.setAttribute("class", "pending__list");
+        const btns = document.createElement("div");
         btns.appendChild(delBtn);
         btns.appendChild(finishBtn);
-        li.appendChild(span);
-        li.appendChild(btns);
+        const li = getList("pending__list",span,btns);
+        li.id = pendingId;
         pendingList.appendChild(li);
-        const pendingObj = {
-        text,
-        id: pendingId
-        }
-        PENDING.push(pendingObj);
+        updateTodo(PENDING,text,pendingId)
         saveTodo(PENDING);
         console.log(loaded);
         if (loaded) {
-            getTodo('pending');
+            animationTodo('pending');
         }
     }
-    else if(item==='finished'){
+    else if (item === 'finished') {
         const finishedId = FINISHED.length + 1;
         delBtn.id = finishedId;
+        const li=getList("finished__list",span,delBtn);
         li.id = finishedId;
-        li.setAttribute("class","finished__list")
-        li.appendChild(span);
-        li.appendChild(delBtn);
         finishedList.appendChild(li);
-        const finishedObj = {
-            text,
-            id: finishedId
-        }
-        FINISHED.push(finishedObj);
+        updateTodo(FINISHED, text, finishedId);
         saveTodo(FINISHED);
         if (loaded) {
-            getTodo('finished');
+            animationTodo('finished');
         }
     }
 }
@@ -122,7 +141,7 @@ function onClickPendingBtn(event) {
             });
             PENDING = filtered;
             saveTodo(PENDING);
-            getTodo('finished');
+            animationTodo('finished');
         }
     }
 }

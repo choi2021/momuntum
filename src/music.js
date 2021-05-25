@@ -1,11 +1,13 @@
 const musicImgContainer = document.querySelector(".music-img-container");
-const startBtn = document.querySelector(".music-start");
-const stopBtn = document.querySelector(".music-stop");
+const backwardBtn=document.querySelector(".music-backward-btn");
+const playBtn = document.querySelector(".music-play-btn");
+const forwardBtn= document.querySelector(".music-forward-btn");
+
 
 function getMusic(){
-    return fetch('music.json')
+    return fetch("./music.json")
         .then(response => response.json())
-        .then(json => json.music);
+        .then(json =>json.music);
 }
 
 function getRanNum(num) {
@@ -16,8 +18,7 @@ function setSong(music, random) {
     const song = new Audio;
     song.src = music[random].song;
     song.volume = 0.3;
-    startBtn.addEventListener("click",()=> onClickStart(song));
-    stopBtn.addEventListener("click",()=> onClickStop(song));
+    playBtn.addEventListener("click",()=> onClickStart(song));
 }
 
 function onClickStart(song) {
@@ -38,6 +39,7 @@ function setImg(music, random) {
 
 getMusic()
     .then(music => {
+        console.log(music);
         const totalNumber = music.length;
         const random = getRanNum(totalNumber);
         setSong(music, random);

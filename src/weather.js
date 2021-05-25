@@ -3,7 +3,6 @@ const weatherTemp = document.querySelector(".weather__temp");
 const recommendation=document.querySelector(".weather__recommend");
 const weatherContainer = document.querySelector(".weather-container");
 const recommendationUrl = document.querySelector(".weather__recommend-url");
-console.log(recommendationUrl);
 
 
 const API_KEYS = `883f192704568f81e08ccd7d56a18e78`;
@@ -61,15 +60,14 @@ function getWeather(obj) {
         .then(response => response.json())
         .then(json => {
             const weather = json.weather[0].main;
-            console.log(weather==="Clouds");
+            console.log(weather);
             switch (weather) {
                 case 'Clear':
                     recommendationUrl.setAttribute("href", "https://www.youtube.com/watch?v=HGrP1qdE5Rw");
                     break;
                 case "Clouds":
+                case "Rain":
                     recommendationUrl.setAttribute("href", "https://www.youtube.com/watch?v=J79HVjqxejs&t=5375s");
-                    break;
-                case '':
                     break;
                 default:
                     throw new Error(`Get Wrong Weather`);

@@ -100,7 +100,7 @@ body{
     margin:0;
     border:var(--border);
     width:200px;
-    height: 40px;
+    height: 60px;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -184,17 +184,25 @@ body{
 
 .todo-title{
     display: inline-block;
+    font-size:25px;
     margin-bottom:15px;
+}
+
+.todo-get:focus-within{
+    transform:scale(1.1);
 }
 
 .todo-input{
     background-color: transparent;
-    border:var(--border);
-    padding:3px;
+    border: none;
+    border-bottom:var(--border);
+    padding:10px;
     color:var(--white-color);
     outline:none;
     text-align: center;
 }
+
+
 
 .todo-input::placeholder{
     text-align: center;
