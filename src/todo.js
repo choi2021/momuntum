@@ -1,4 +1,5 @@
 'use strict';
+
 const pendingContainer = document.querySelector(".pending-lists");
 const finishedContainer = document.querySelector(".finished-lists");
 const pendingList = document.querySelector(".todo-lists__pending");

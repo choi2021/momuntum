@@ -76,7 +76,3 @@ function getWeather(obj) {
             weatherTemp.innerHTML=` Feelslike:${json.main.feels_like}℃<br>TempMax:${json.main.temp_max}℃<br>TempMin:${json.main.temp_min}℃`
         });
 }
-
-function showWeather(obj) {
-    console.log(obj);
-}
