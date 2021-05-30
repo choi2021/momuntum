@@ -34,79 +34,54 @@ function putAnimation(container) {
     container.classList.add("todo-getanimation");
     setTimeout(() => {
         container.classList.remove("todo-getanimation"); 
-    }, 2000);
-}
-
-function getDelbtn() {
-    const delBtn = document.createElement("button");
-    delBtn.setAttribute("class", "todo__delete-btn");
-    delBtn.innerText = `❌`;
-    return delBtn;
-}
-
-function getFinishedBtn() {
-    const finishBtn = document.createElement("button");
-    finishBtn.innerText = `👍`;
-    finishBtn.setAttribute("class", "todo__finish-btn");
-    return finishBtn;
-}
-
-function getText(text) {
-    const span = document.createElement("span");
-    span.innerText = `${text}`;
-    span.setAttribute("class", "todo__text");
-    return span;
-}
-
-function getList(classname,span,btn){
-    const li = document.createElement("li");
-    li.setAttribute("class", classname);
-    li.appendChild(span);
-    li.appendChild(btn);
-    return li;
+    }, 1000);
 }
 
 function updateTodo(array,text,id) {
     const obj = {
-        text,
+        text:text,
         id: id
     }
     array.push(obj);
 }
 
-function makeTodo(text, item) {
-    const span = getText(text);
-    const delBtn = getDelbtn();
-    if (item == 'pending') {
-        const pendingId = PENDING.length + 1;
-        delBtn.id = pendingId;
-        const finishBtn = getFinishedBtn();
-        finishBtn.id = pendingId;
-        const btns = document.createElement("div");
-        btns.appendChild(delBtn);
-        btns.appendChild(finishBtn);
-        const li = getList("pending__list",span,btns);
-        li.id = pendingId;
-        pendingList.appendChild(li);
-        updateTodo(PENDING,text,pendingId)
-        saveTodo(PENDING);
-        console.log(loaded);
-        if (loaded) {
-            animationTodo('pending');
-        }
+function updatePending(text) {
+    const pendingId = PENDING.length + 1;
+    const li = document.createElement("li");
+    li.setAttribute("class", "pending__list");
+    li.id = pendingId;
+    li.innerHTML =`
+    <span class="todo__text">${text}</span>
+    <div>
+        <button class="todo__delete-btn" id="${pendingId}">❌</button>
+        <button class="todo__finish-btn" id="${pendingId}">👍</button>
+    </div>`
+    pendingList.appendChild(li);
+    updateTodo(PENDING,text,pendingId)
+    saveTodo(PENDING);
+    if (loaded) {
+        animationTodo('pending');
     }
-    else if (item === 'finished') {
-        const finishedId = FINISHED.length + 1;
-        delBtn.id = finishedId;
-        const li=getList("finished__list",span,delBtn);
-        li.id = finishedId;
-        finishedList.appendChild(li);
-        updateTodo(FINISHED, text, finishedId);
-        saveTodo(FINISHED);
-        if (loaded) {
-            animationTodo('finished');
-        }
+    addScrollView(pendingList);
+}
+
+function updateFinished(text) {
+    const finishedId = FINISHED.length + 1;
+    const li = document.createElement("li");
+    li.setAttribute("class", "finished__list");
+    li.id = finishedId;
+    li.innerHTML =`
+    <span class="todo__text">${text}</span>
+    <div>
+        <button class="todo__delete-btn" id="${finishedId}">❌</button>
+    </div>`
+    finishedList.appendChild(li);
+    updateTodo(FINISHED,text,finishedId)
+    saveTodo(FINISHED);
+    if (loaded) {
+        animationTodo('finished');
     }
+    addScrollView(pendingList);
 }
 
 function onSubmit(event) {
@@ -116,7 +91,7 @@ function onSubmit(event) {
     if (todo ==='') {
         return;
     }
-    makeTodo(todo, "pending");
+    updatePending(todo);
     todoInput.value = '';
 }
 
@@ -128,23 +103,24 @@ function onClickPendingBtn(event) {
     } else {
         if (event.target.matches(".todo__delete-btn")) {
             list.remove();
-            const filtered = PENDING.filter(todo => {
-                return todo.id != parseInt(list.id);
-            });
-            PENDING = filtered;
-            saveTodo(PENDING);
+            pendingUpdate(parseInt(list.id));
         } else{
-            const text = list.childNodes[0].innerText;
-            makeTodo(text, 'finished');
+            const text = list.querySelector(".todo__text").innerText;
+            updateFinished(text);
             list.remove();
-            const filtered = PENDING.filter(todo => {
-                return todo.id != parseInt(list.id);
-            });
-            PENDING = filtered;
-            saveTodo(PENDING);
+            pendingUpdate(parseInt(list.id));
             animationTodo('finished');
+            addScrollView(finishedList);
         }
     }
+}
+
+function pendingUpdate(num) {
+    const filtered = PENDING.filter(todo => {
+        return todo.id != num;
+    });
+    PENDING = filtered;
+    saveTodo(PENDING);
 }
 
 function onClickFinishedBtn(event) {
@@ -162,14 +138,18 @@ function onClickFinishedBtn(event) {
     }
 }
 
+function addScrollView(list) {
+    list.scrollIntoView();
+}
+
 
 const loadedPending = localStorage.getItem(PENDING_LS);
 const loadedFinished = localStorage.getItem(FINSISHED_LS);
 if (loadedPending !== null || loadedFinished !== null) {
     const parsedPending = JSON.parse(loadedPending);
     const parsedFinished = JSON.parse(loadedFinished);
-    parsedPending && parsedPending.forEach(todo => makeTodo(todo.text, 'pending', loaded));
-    parsedFinished && parsedFinished.forEach(todo => makeTodo(todo.text, 'finished'));
+    parsedPending && parsedPending.forEach(todo => updatePending(todo.text));
+    parsedFinished && parsedFinished.forEach(todo => updateFinished(todo.text));
 }
 todoForm.addEventListener("submit", onSubmit);
 pendingList.addEventListener("click", onClickPendingBtn);

@@ -250,7 +250,7 @@ body{
 }
 
 .todo-getanimation{
-    animation:scaleUp 2s ease-in-out;
+    animation:scaleUp 1s ease-in-out;
 }
 
 @keyframes scaleUp {

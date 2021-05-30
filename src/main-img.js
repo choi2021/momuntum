@@ -1,6 +1,9 @@
 const mainContainer = document.querySelector(".main-img-container");
 const TOTALIMAGE = 3;
 
+function getRanNum(num) {
+    return Math.floor(num * Math.random());
+}
 
 function getImage(num) {
     if (num === 0|| num===1) {

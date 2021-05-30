@@ -7,33 +7,39 @@ let setlist = [];
 let songNumber = 0;
 let song = undefined;
 
-async function getMusic(){
+function getMusic(){
     return fetch("./music.json")
         .then(response => response.json())
         .then(json =>json.music);
 }
 
-function updateSetlist(num,music) {
-    for (let i = 0; i < num; i++){
-        const rand = getRanNum(num);
-        const musicUrl = music[rand];
-        const sound = getSong(musicUrl.song);
-        const album = getImg(musicUrl.img);
+function updateSetlist(num, music) {
+    getRandomArray(num);
+    setlist = setlist.map(num => music[num])
+        .map(item => {
+        const sound = getSong(item.song);
+        const img = getImg(item.img);
         const setlistObj = {
-            sound,
-            album
+            sound: sound,
+            img: img
         }
-        if (setlist.includes(setlistObj)) {
+        return setlistObj;
+    });
+}
+
+function getRandomNum(num) {
+    return Math.floor(num * Math.random());
+}
+
+function getRandomArray(num) {
+    for (let i = 0; i < num; i++){
+        const rand = getRandomNum(num);
+        if (setlist.includes(rand)) {
             i--;
             continue;
         }
-        console.log(musicUrl);
-        setlist.push(setlistObj);
+        setlist.push(rand);
     }
-}
-
-function getRanNum(num) {
-    return Math.floor(num * Math.random());
 }
 
 function getSong(url) {
@@ -52,7 +58,7 @@ function getImg(url) {
 
 function setImg() {
     musicImgContainer.innerHTML = ``;
-    const image = setlist[songNumber].album;
+    const image = setlist[songNumber].img;
     musicImgContainer.appendChild(image);
 }
 
@@ -106,7 +112,6 @@ function stopSong(song) {
 }
 
 function onClickForward() {
-    console.log(songNumber);
     songNumber++;
     if (songNumber > setlist.length - 1) {
         songNumber = 0;
@@ -140,7 +145,6 @@ function onClickBackward() {
 
 getMusic()
     .then(music => {
-        console.log(music);
         const totalNumber = music.length;
         updateSetlist(totalNumber, music);
         setImg();
