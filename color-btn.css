@@ -6,8 +6,8 @@
 }
 
 .colorBtn{
-    width:25px;
-    height: 25px;
+    width: var(--color-btn-size);
+    height: var(--color-btn-size);
     border-radius: 50%;
     border:0;
     cursor: pointer;

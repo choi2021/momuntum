@@ -2,6 +2,9 @@
 @import "greeting.css";
 :root{
     /*color*/
+    --sky-blue-color:#A5F7FF;
+    --light-yellow-color:#F7F7DE;
+    --light-red-color:#F7E7D6;
     --white-color:#FDFEFF;
     --pink-color:#F3CCD1 ;
     --gray-color:#052856;
@@ -15,6 +18,7 @@
     --font-name-size:20px;
     --font-time-size:50px;
     --base-space:180px;
+    --color-btn-size:2rem;
     
     /*border*/
     --border:3px solid var(--white-color);
@@ -180,16 +184,17 @@ body{
     border:var(--border);
     padding:25px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.todo-get:focus-within{
+    transform:scale(1.1);
 }
 
 .todo-title{
     display: inline-block;
     font-size:25px;
     margin-bottom:15px;
-}
-
-.todo-get:focus-within{
-    transform:scale(1.1);
 }
 
 .todo-input{
