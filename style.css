@@ -1,18 +1,17 @@
+@import "main.css";
 
 :root{
     /*color*/
     --sky-blue-color:#A5F7FF;
     --white-color:#FFFFFF;
     --black-color:#060400;
+    --bg1-color:#7C8DE5;
+    --bg2-color:#0B0438;
 
     /*size*/
     --header-time-size:50px;
-    --header-name-size:35px;
+    --header-name-size:25px;
     --header-music-title-size:20px;
-    --main-menu-btn-size:50px;
-    --main-text-size:60px;
-    --list-text-size:35px;
-    --menu-btn-size:30px;
 
     /*border*/
     
@@ -40,30 +39,36 @@ ul,input{
 body{
     box-sizing: border-box;
     margin:0;
-    width:100vw;
+    width:99vw;
     height: 150vh;
     display: flex;
     flex-direction: column;
+    background: url("img/background3.jpg") center/cover no-repeat;
+    background-attachment: fixed;
 }
 
 .header{
-    background-color: var(--white-color);
-    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 1px solid var(--black-color);
+    color:var(--white-color);
+}
+
+.header__time-name-container{
+    width: 33%;
+    display: flex;
 }
 
 .header__time{
-    width: 33%;
     font-size: var(--header-time-size);
+    margin-right:40px;
 }
 
 .header__name{
     display: flex;
     justify-content: center;
-    width: 33%;
+    align-items: center;
+    width: 100%;
     font-size:var(--header-name-size);
     text-transform: uppercase;
 }
@@ -72,21 +77,27 @@ body{
     display: flex;
     justify-content: flex-end;
     width: 33%;
+    margin-right: 30px;
 }
 
 .header__music{
     margin-right:100px;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header__music__title{
     font-size:var(--header-music-title-size);
     text-transform: uppercase;
+    margin-bottom:10px;
 }
 
-.header__music__btns{
+.header__music__btn{
     display: flex;
     justify-content: center;
+    color: var(--white-color);
     will-change: transform;
 }
 
@@ -96,99 +107,3 @@ body{
     flex-direction: column;
 }
 
-.main{
-    position: relative;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main__title{
-    color:var(--black-color);
-    text-transform: uppercase;
-    font-size:var(--main-text-size);
-    margin:8px 0;
-    font-weight: bold;
-}
-
-.main__img{
-    background: url("img/background4.jpg") center/cover no-repeat;
-    width: 50%;
-    height: 60%;
-    margin-bottom: 15px;
-}
-
-.main__menu{
-    width: 20%;
-    height: 30%;
-    position: absolute;
-    top:5%;
-    left:3%;
-    color:var(--black-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.main__menu__header{
-    display: flex;
-}
-
-.main-menu__btn{
-    color:var(--black-color);
-    cursor: pointer;
-    will-change: transform;
-    border-radius: 50%;
-    padding:5px;
-    border:2px solid var(--black-color);
-    margin-right:20px;
-    width:var(--menu-btn-size);
-    height: var(--menu-btn-size);
-    font-size:16px;
-}
-
-.main__menu__text{
-    font-size:25px;
-    color:var(--black-color);
-}
-
-.main__menu__content{
-    display: flex;
-}
-
-.main__menu__vertical{
-    width: 2px;
-    height: 100%;
-    background-color: var(--black-color);
-    margin-left:13px;
-    margin-right:30px;
-}
-
-.main__menu__list{
-    margin-top:50px;
-    display: flex;
-    flex-direction: column;
-    color:var(--black-color);
-}
-
-.main__menu__item{
-    list-style: none;
-}
-
-.main__menu__item__btn{
-    color:var(--black-color);
-    font-size: var(--list-text-size);
-}
-
-.main__todo__form{
-    border: 2px solid var(--black-color);
-    padding:15px;
-}
-
-.main__todo__header{
-    font-size:20px;
-}
-
-.main__todo__input{
-    border-bottom: 2px solid var(--black-color);
-    width: 100%;

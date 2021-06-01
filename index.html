@@ -12,15 +12,15 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__time">00:00</div>
-        <div class="header__name">welcome Choi</div>
+        <div class="header__time-name-container">
+            <span class="header__time">00:00</span>
+            <span class="header__name">welcome Choi</span>
+        </div>
+        <span class="main__title">la la land</span>
         <section class="header__music-weather">
             <div class="header__music">
-                <header class="header__music__title">music</header>
-                <ul class="header__music__btns">
-                    <li class="play-btn"><button><i class="fas fa-play"></i></button></li>
-                    <li class="stop-btn"><button><i class="fas fa-stop"></i></button></li>
-                </ul>
+                <header class="header__music__title">ost</header>
+                <button class="header__music__btn"><i class="fas fa-play"></i></button>
             </div>
             <div class="header__weather">
                 <span class="location">Busan</span>
@@ -30,10 +30,9 @@
     </header>
 
     <main class="main">
-        <header class="main__title">la la land</header>
         <div class="main__img"></div>
 
-        <div class="main__menu">
+        <section class="main__menu">
             <header class="main__menu__header">
                 <button class="main-menu__btn"><i class="fas fa-bars "></i></button>
                 <button class="main__menu__text">Menu</button>
@@ -41,18 +40,36 @@
             <div class="main__menu__content">
                 <div class="main__menu__vertical"></div>
                 <ul class="main__menu__list">
+                    <div class="main__menu__list">USER</div>
+                    <li class="main__menu__item"><button class="main__menu__item__btn">Weather</button></li>
+                    <li class="main__menu__item"><button class="main__menu__item__btn">Finished TO-DO</button></li>
+                    <div class="main__menu__list">Movie</div>
                     <li class="main__menu__item"><button class="main__menu__item__btn">Scene</button></li>
                     <li class="main__menu__item"><button class="main__menu__item__btn">Illustration</button></li>
                     <li class="main__menu__item"><button class="main__menu__item__btn">Sound Track</button></li>
-                    <li class="main__menu__item"><button class="main__menu__item__btn">Weather</button></li>
                 </ul>
             </div>
-        </div>
+        </section>
+        <section class="main__todo">
+            <header class="main__todo__header">
+                <button class="main__todo__btn"><i class="fas fa-list-ul"></i></button>
+                <form class="main__todo__form">
+                    <input class="main__todo__input" placeholder="Today's TO-DO" type="text">
+                </form>
+            </header>
+            <div class="main__todo-list-container">
+                <ul class="main__todo-list">
+                    <li class="main__todo-item">
+                        <span class="main__todo-text">read</span>
+                        <div class="main__todo-btns">
+                            <button class="main-list-btn main__todo-del-btn">x</button>
+                            <button class="main-list-btn main__todo-finished-btn"><i class="far fa-thumbs-up"></i></button>
+                        </div>
+                    </li>
+                </ul>
 
-        <form class="main__todo__form">
-            <header class="main__todo__header">What is your main focus of today?</header>
-            <input class="main__todo__input" type="text">
-        </form>
+            </div>
+        </section>
     </main>
 
 </body>
