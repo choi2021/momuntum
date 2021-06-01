@@ -4,8 +4,8 @@ const greetingContainer = document.querySelector(".greeting-Container");
 const greetingForm = document.querySelector(".greeting-form");
 const greetingInput = greetingForm.querySelector("input");
 const greetingText = document.querySelector(".greeting-text");
-const nameText = document.querySelector(".name-text");
-const nameContainer = document.querySelector(".name-container");
+const nameText = document.querySelector(".main-name-text");
+const nameContainer = document.querySelector(".main-name-container");
 
 const USER_LS = "user";
 
