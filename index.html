@@ -9,68 +9,120 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
     <script src="https://kit.fontawesome.com/a6a726722e.js" crossorigin="anonymous"></script>
+    <script src="src/time.js" defer></script>
+    <script src="src/weather.js" defer></script>
+    <script src="src/name.js" defer></script>
 </head>
 <body>
     <header class="header">
-        <div class="header__time-name-container">
+        <div class="header__time-container">
             <span class="header__time">00:00</span>
-            <span class="header__name">welcome Choi</span>
         </div>
-        <span class="main__title">la la land</span>
+        <div class="header__name-container">
+            <form class="header__name-form name-hide" action="">
+                <input class="header__name-input" type="text" placeholder="What is your name?">
+            </form>
+            <span class="header__name name-hide">welcome Choi</span>
+        </div>
         <section class="header__music-weather">
             <div class="header__music">
                 <header class="header__music__title">ost</header>
                 <button class="header__music__btn"><i class="fas fa-play"></i></button>
             </div>
             <div class="header__weather">
-                <span class="location">Busan</span>
-                <span class="temp-weather">17°C <i class="far fa-sun"></i></span>
             </div>
         </section>
     </header>
-
-    <main class="main">
-        <div class="main__img"></div>
-
-        <section class="main__menu">
-            <header class="main__menu__header">
-                <button class="main-menu__btn"><i class="fas fa-bars "></i></button>
-                <button class="main__menu__text">Menu</button>
+    <section class="menu-todo">
+        <section class="menu">
+            <header class="menu__header">
+                <button class="menu__btn"><i class="fas fa-bars "></i></button>
+                <button class="menu__text">Menu</button>
             </header>
-            <div class="main__menu__content">
-                <div class="main__menu__vertical"></div>
-                <ul class="main__menu__list">
-                    <div class="main__menu__list">USER</div>
-                    <li class="main__menu__item"><button class="main__menu__item__btn">Weather</button></li>
-                    <li class="main__menu__item"><button class="main__menu__item__btn">Finished TO-DO</button></li>
-                    <div class="main__menu__list">Movie</div>
-                    <li class="main__menu__item"><button class="main__menu__item__btn">Scene</button></li>
-                    <li class="main__menu__item"><button class="main__menu__item__btn">Illustration</button></li>
-                    <li class="main__menu__item"><button class="main__menu__item__btn">Sound Track</button></li>
+            <div class="menu__content">
+                <div class="menu__vertical"></div>
+                <ul class="menu__list">
+                    <div class="menu__title"><button class="menu__title-btn">Home</button></div>
+                    <div class="menu__title"><button class="menu__title-btn">Movie</button></div>
+                    <li class="menu__item"><button class="menu__item__btn">Scene</button></li>
+                    <li class="menu__item"><button class="menu__item__btn">Illustration</button></li>
+                    <li class="menu__item"><button class="menu__item__btn">Sound Track</button></li>
                 </ul>
             </div>
         </section>
-        <section class="main__todo">
-            <header class="main__todo__header">
-                <button class="main__todo__btn"><i class="fas fa-list-ul"></i></button>
-                <form class="main__todo__form">
-                    <input class="main__todo__input" placeholder="Today's TO-DO" type="text">
+        <span class="title">lala land</span>
+        <section class="todo">
+            <header class="todo__header">
+                <button class="todo__btn"><i class="fas fa-list-ul"></i></button>
+                <form class="todo__form">
+                    <input class="todo__input" placeholder="Today's TO-DO" type="text">
                 </form>
+                <button class="todo__btn"><i class="far fa-thumbs-up"></i></button>
             </header>
-            <div class="main__todo-list-container">
-                <ul class="main__todo-list">
-                    <li class="main__todo-item">
-                        <span class="main__todo-text">read</span>
-                        <div class="main__todo-btns">
-                            <button class="main-list-btn main__todo-del-btn">x</button>
-                            <button class="main-list-btn main__todo-finished-btn"><i class="far fa-thumbs-up"></i></button>
+            <div class="todo-list-container todo-pending">
+                <ul class="todo-list">
+                    <header class="todo-list-header">Pending</header>
+                    <li class="todo-item">
+                        <span class="todo-text">read</span>
+                        <div class="todo-btns">
+                            <button class="todo-list-btn todo-del-btn">x</button>
+                            <button class="todo-list-btn todo-finished-btn"><i class="far fa-thumbs-up"></i></button>
                         </div>
                     </li>
                 </ul>
-
+            </div>
+            <div class="todo-list-container todo-finished">
+                <ul class="todo-list">
+                    <header class="todo-list-header">Finished</header>
+                    <li class="todo-item">
+                        <span class="todo-text">read</span>
+                        <div class="todo-btns">
+                            <button class="todo-list-btn todo-del-btn">x</button>
+                            <button class="todo-list-btn todo-finished-btn"><i class="far fa-thumbs-up"></i></button>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
-    </main>
+    </section>
+    <section class="movie">
+        <header class="movie-header">
+            <i class="fas fa-film movie-header__icon"></i>
+            <span class="movie-header-text">Movie</span>
+        </header>
+        <section class="movie__scene">
+            <header class="movie__scene-header">Scene</header>
+            <ul class="movie__scene-slider">
+                <li class="movie__scene-slider-item">
+                    <div class="movie__scene-photo-container">
+                        <label for="movie__scene-slider-first-page"><img class="movie__scene-photo" src="img/scene/scene photo1.jpg" alt=""></label>
+                    </div>
+                    <div class="movie__scene-photo-container">
+                        <img class="movie__scene-photo" src="img/scene/scene photo2.jpg" alt="">
+                    </div>
+                    <div class="movie__scene-photo-container">
+                        <img class="movie__scene-photo" src="img/scene/scene photo3.jpg" alt="">
+                    </div>
+                </li>
+                <li class="movie__scene-slider-item">
+                    <div class="movie__scene-photo-container">
+                        <label for="movie__scene-slider-first-page"><img class="movie__scene-photo" src="img/scene/scene photo1.jpg" alt=""></label>
+                    </div>
+                    <div class="movie__scene-photo-container">
+                        <img class="movie__scene-photo" src="img/scene/scene photo2.jpg" alt="">
+                    </div>
+                    <div class="movie__scene-photo-container">
+                        <img class="movie__scene-photo" src="img/scene/scene photo3.jpg" alt="">
+                    </div>
+                </li>
+            </ul>
+            <div class="movie__scene-slider-btns">
+                <input type="radio" id="movie__scene-slider-first-page" checked>
+                <input type="radio" id="movie__scene-slider-second-page">
+                <input type="radio" id="movie__scene-slider-third-page">
+            </div>
+        </section>
+    </section>
 
 </body>
 </html>

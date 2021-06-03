@@ -1,20 +1,19 @@
-@import "main.css";
+@import "menu-todo.css";
+@import "movie.css";
 
 :root{
     /*color*/
     --sky-blue-color:#A5F7FF;
     --white-color:#FFFFFF;
     --black-color:#060400;
-    --bg1-color:#7C8DE5;
-    --bg2-color:#0B0438;
 
     /*size*/
     --header-time-size:50px;
-    --header-name-size:25px;
+    --header-name-size:35px;
     --header-music-title-size:20px;
 
     /*border*/
-    
+    --border:2px solid var(--white-color);
 }
 
 *{
@@ -37,26 +36,23 @@ ul,input{
 }
 
 body{
-    box-sizing: border-box;
     margin:0;
     width:99vw;
-    height: 150vh;
+    height: 250vh;
     display: flex;
     flex-direction: column;
-    background: url("img/background3.jpg") center/cover no-repeat;
+    align-items: center;
+    background: url("img/background.jpg") center/cover no-repeat;
     background-attachment: fixed;
 }
 
 .header{
+    padding:1%;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color:var(--white-color);
-}
-
-.header__time-name-container{
-    width: 33%;
-    display: flex;
 }
 
 .header__time{
@@ -65,18 +61,31 @@ body{
 }
 
 .header__name{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
     font-size:var(--header-name-size);
     text-transform: uppercase;
 }
 
+.header__name-input{
+    text-align: center;
+    width: 100%;
+    padding:8px;
+    border:var(--border);
+    border-radius: 12px;
+}
+
+.header__name-input::placeholder{
+    color:var(--white-color);
+    text-align: center;
+    font-size: 20px;
+}
+
+.name-hide{
+    display: none;
+}
+
+
 .header__music-weather{
     display: flex;
-    justify-content: flex-end;
-    width: 33%;
     margin-right: 30px;
 }
 
@@ -105,5 +114,6 @@ body{
     font-size:var(--header-music-title-size);
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
