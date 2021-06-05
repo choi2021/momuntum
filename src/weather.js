@@ -50,7 +50,7 @@ getWeather(lat, lon)
             case "Rain":
                 iconClass = "fas fa-cloud-rain";
                 break;
-            case "clear":
+            case "Clear":
             case "Sunny":
                 iconClass = "far fa-sun";
                 break;
