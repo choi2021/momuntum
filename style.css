@@ -1,5 +1,5 @@
-@import "menu-todo.css";
 @import "movie.css";
+@import "menu-todo.css";
 
 :root{
     /*color*/
@@ -38,7 +38,7 @@ ul,input{
 body{
     margin:0;
     width:99vw;
-    height: 250vh;
+    height: 500vh;
     display: flex;
     flex-direction: column;
     align-items: center;

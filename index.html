@@ -14,6 +14,9 @@
     <script src="src/name.js" defer></script>
     <script src="src/todo.js" defer></script>
     <script src="src/menu.js" defer></script>
+    <script src="src/movie.js" defer></script>
+    <script src="src/music.js" defer></script>
+</head>
 </head>
 <body>
     <header class="header">
@@ -35,8 +38,8 @@
             </div>
         </section>
     </header>
-    <section class="menu-todo">
-        <section class="menu">
+    <main class="main">
+        <section class="menu ">
             <header class="menu__header">
                 <button class="menu__btn" data-key="header-icon" data-value="scroll"><i class="fas fa-bars" data-key="header-icon" data-value="scroll" ></i></button>
                 <button class="menu__text" data-key="header-text" data-value="scroll">Menu</button>
@@ -52,7 +55,6 @@
                 </ul>
             </div>
         </section>
-        <span class="title">lala land</span>
         <section class="todo">
             <header class="todo__header">
                 <button class="todo__btn pending-btn"><i class="fas fa-list-ul"></i></button>
@@ -72,45 +74,106 @@
                 </ul>
             </div>
         </section>
-    </section>
-    <section class="movie">
-        <header class="movie-header">
-            <i class="fas fa-film movie-header__icon"></i>
-            <span class="movie-header-text">Movie</span>
-        </header>
-        <section class="movie__scene">
-            <header class="movie__scene-header">Scene</header>
-            <ul class="movie__scene-slider">
-                <li class="movie__scene-slider-item">
-                    <div class="movie__scene-photo-container">
-                        <label for="movie__scene-slider-first-page"><img class="movie__scene-photo" src="img/scene/scene photo1.jpg" alt=""></label>
+        <span class="title">lala land</span>
+        <section class="movie">
+            <header class="movie-header">
+                <i class="fas fa-film movie-header__icon"></i>
+                <span class="movie-header-text">Movie</span>
+            </header>
+            <section class="movie__scene">
+                <header class="movie__scene-header">Scene</header>
+                <div class="movie__scene-content">
+                    <button class="movie__scene-btn movie__scene-left-btn">
+                        <i class="fas fa-arrow-left" data-id="left-btn"></i>
+                    </button>
+                    <div class="movie__scene-wrapper">
+                        <ul class="movie__scene-slider">
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo1.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo2.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo3.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo4.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo5.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo6.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo7.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo8.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo9.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo10.jpg" alt="">
+                            </li>
+                            <li class="movie__scene-slider-item">
+                                <img class="movie__scene-photo" src="img/scene/scene photo11.jpg" alt="">
+                            </li>
+                        </ul>
                     </div>
-                    <div class="movie__scene-photo-container">
-                        <img class="movie__scene-photo" src="img/scene/scene photo2.jpg" alt="">
+                    <button class="movie__scene-btn movie__scene-right-btn">
+                        <i class="fas fa-arrow-right" data-id="right-btn" ></i>
+                    </button>
+                </div>
+            </section>
+            <section class="movie__illustration">
+                <header class="movie__illustration-header">Illustration</header>
+                <div class="movie__illustration-content">
+                    <button class="movie__illustration-btn movie__illustration-left-btn">
+                        <i class="fas fa-arrow-left" data-id="left-btn"></i>
+                    </button>
+                    <div class="movie__illustration-wrapper">
+                        <ul class="movie__illustration-slider">
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust1.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust2.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust3.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust4.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust5.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust6.gif" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust7.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust8.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust9.jpg" alt="">
+                            </li>
+                            <li class="movie__illustration-slider-item">
+                                <img class="movie__illustration-photo" src="img/illust/illust10.jpg" alt="">
+                            </li>
+                        </ul>
                     </div>
-                    <div class="movie__scene-photo-container">
-                        <img class="movie__scene-photo" src="img/scene/scene photo3.jpg" alt="">
-                    </div>
-                </li>
-                <li class="movie__scene-slider-item">
-                    <div class="movie__scene-photo-container">
-                        <label for="movie__scene-slider-first-page"><img class="movie__scene-photo" src="img/scene/scene photo1.jpg" alt=""></label>
-                    </div>
-                    <div class="movie__scene-photo-container">
-                        <img class="movie__scene-photo" src="img/scene/scene photo2.jpg" alt="">
-                    </div>
-                    <div class="movie__scene-photo-container">
-                        <img class="movie__scene-photo" src="img/scene/scene photo3.jpg" alt="">
-                    </div>
-                </li>
-            </ul>
-            <div class="movie__scene-slider-btns">
-                <input type="radio" id="movie__scene-slider-first-page" checked>
-                <input type="radio" id="movie__scene-slider-second-page">
-                <input type="radio" id="movie__scene-slider-third-page">
-            </div>
+                    <button class="movie__illustration-btn movie__illustration-right-btn">
+                        <i class="fas fa-arrow-right" data-id="right-btn" ></i>
+                    </button>
+                </div>
+            </section>
         </section>
-    </section>
-
+    </main>
 </body>
 </html>

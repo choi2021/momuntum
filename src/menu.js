@@ -66,8 +66,35 @@ function onClickMenuContent(event) {
             break;
         case "Movie":
             const movie = document.querySelector(".movie");
-            movie.scrollIntoView({ behavior: "smooth"});
+            const movieRect = movie.getBoundingClientRect();
+            const movieTop = movieRect.top;
+            window.scrollBy({
+                top: movieTop,
+                behavior: "smooth",
+                left: 0
+            });
             break;
+        case "Scene":
+            const scene = document.querySelector(".movie__scene");
+            const sceneRect = scene.getBoundingClientRect();
+            const sceneTop = sceneRect.top;
+            window.scrollBy({
+                top: sceneTop,
+                behavior: "smooth",
+                left: 0
+            });
+            break;
+        case "Illustration":
+            const illust = document.querySelector(".movie__illustration");
+            const illustRect = illust.getBoundingClientRect();
+            const illustTop = illustRect.top;
+            window.scrollBy({
+                top: illustTop,
+                behavior: "smooth",
+                left: 0
+            });
+            break;
+        
         default:
             throw Error(`Click Wrong Button`);
     }
