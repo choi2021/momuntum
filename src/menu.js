@@ -84,8 +84,8 @@ function onClickMenuContent(event) {
                 left: 0
             });
             break;
-        case "Illustration":
-            const illust = document.querySelector(".movie__illustration");
+        case "Illust":
+            const illust = document.querySelector(".movie__illust");
             const illustRect = illust.getBoundingClientRect();
             const illustTop = illustRect.top;
             window.scrollBy({
@@ -94,7 +94,16 @@ function onClickMenuContent(event) {
                 left: 0
             });
             break;
-        
+        case "Sound-Track":
+            const soundTrack = document.querySelector(".movie__sound-track");
+            const soundTrackRect = soundTrack.getBoundingClientRect();
+            const soundTrackTop = soundTrackRect.top;
+            window.scrollBy({
+                top: soundTrackTop,
+                behavior: "smooth",
+                left: 0
+            });
+                break;
         default:
             throw Error(`Click Wrong Button`);
     }

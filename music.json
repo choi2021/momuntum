@@ -1,12 +1,43 @@
 {
     "music":[{
-        "song":"music/나무-카더가든.mp3",
-        "img":"img/나무-카더가든.png"
+        "title":"A lovely night",
+        "song":"music/a lovely night.mp3",
+        "img":"img/music/a lovely night.jpg"
     },{
-        "song":"music/난치병-하림.mp3",
-        "img":"img/난치병-하림.png"
+        "title":"Another days of sun",
+        "song":"music/another days of sun.mp3",
+        "img":"img/music/Another Day of Sun.jpg"
     },{
-        "song":"music/우주를건너-백예린.mp3",
-        "img":"img/우주를건너-백예린.png"
+        "title":"Audition",
+        "song":"music/Audition.mp3",
+        "img":"img/Audition.png"
+    },{
+        "title":"City of stars",
+        "song":"music/city of stars.mp3",
+        "img":"img/music/city of star.jpg"
+    },{
+        "title":"Herman's Habit",
+        "song":"music/Herman's Habit.mp3",
+        "img":"img/music/Herman's habit.jpg"
+    },{
+        "title":"Mia sebastians theme",
+        "song":"music/Mia  Sebastians Theme  La La Land OST.mp3",
+        "img":"img/music/mia sebastians theme.jpg"
+    },{
+        "title":"Planetarium",
+        "song":"music/planetarium.mp3",
+        "img":"img/music/planetarium.jpg"
+    },{
+        "title":"Someone in the crowd",
+        "song":"music/Someone In The Crowd.mp3",
+        "img":"img/music/Someone in the crowd.jpg"
+    },{
+        "title":"Start a Fire",
+        "song":"music/Start a Fire.mp3",
+        "img":"img/music/start a fire.jpg"
+    },{
+        "title":"Summer Montage",
+        "song":"music/Summer Montage  Madeline.mp3",
+        "img":"img/music/summer montage.jpg"
     }]
 }

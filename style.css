@@ -10,7 +10,6 @@
     /*size*/
     --header-time-size:50px;
     --header-name-size:35px;
-    --header-music-title-size:20px;
 
     /*border*/
     --border:2px solid var(--white-color);
@@ -38,7 +37,7 @@ ul,input{
 body{
     margin:0;
     width:99vw;
-    height: 500vh;
+    height: 700vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +46,7 @@ body{
 }
 
 .header{
-    padding:1%;
+    padding:25px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -59,6 +58,45 @@ body{
     font-size: var(--header-time-size);
     margin-right:40px;
 }
+
+.weather-music-container{
+    margin-right: 25px;;
+    display: flex;
+    align-items: center;
+}
+
+.music{
+    margin-right:35px;
+    padding:8px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.music__title{
+    text-transform: uppercase;
+    color: var(--white-color);
+    margin-bottom:15px;
+}
+
+.music__btns{
+    display: flex;
+    justify-content: center;
+    color: var(--white-color);
+    will-change: transform;
+}
+
+.music__btn{
+    color:var(--white-color);
+}
+
+.header__weather{
+    font-size:18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .header__name{
     font-size:var(--header-name-size);
@@ -83,37 +121,4 @@ body{
     display: none;
 }
 
-
-.header__music-weather{
-    display: flex;
-    margin-right: 30px;
-}
-
-.header__music{
-    margin-right:100px;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.header__music__title{
-    font-size:var(--header-music-title-size);
-    text-transform: uppercase;
-    margin-bottom:10px;
-}
-
-.header__music__btn{
-    display: flex;
-    justify-content: center;
-    color: var(--white-color);
-    will-change: transform;
-}
-
-.header__weather{
-    font-size:var(--header-music-title-size);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 

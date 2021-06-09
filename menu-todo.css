@@ -17,7 +17,7 @@
 .main{
     position: relative;
     height: 100%;
-    width:100vw;
+    width:100%;
     display:flex;
     flex-direction: column;
     align-items: center;
@@ -210,7 +210,7 @@
 
 .title{
     position: absolute;
-    top:5%;
+    top:3%;
     align-self: center;
     color:var(--white-color);
     text-transform: uppercase;
@@ -223,7 +223,7 @@
     position: absolute;
     top:0;
     right:3%;
-    height: 70%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;

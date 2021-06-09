@@ -23,20 +23,20 @@
         <div class="header__time-container">
             <span class="header__time">00:00</span>
         </div>
-        <div class="header__name-container">
-            <form class="header__name-form name-hide" action="">
-                <input class="header__name-input" type="text" placeholder="What is your name?">
-            </form>
-            <span class="header__name name-hide">welcome Choi</span>
-        </div>
-        <section class="header__music-weather">
-            <div class="header__music">
-                <header class="header__music__title">ost</header>
-                <button class="header__music__btn"><i class="fas fa-play"></i></button>
-            </div>
+        <div class="weather-music-container">
+            <section class="music">
+                <span class="music__title">Another day of sun</span>
+                <div class="music__btns">
+                    <button class="music__btn"><i class="fas fa-redo"></i></button>
+                    <button class="music__btn"><i class="fas fa-step-backward"></i></button>
+                    <button class="music__btn"><i class="fas fa-play"></i></button>
+                    <button class="music__btn"><i class="fas fa-step-forward"></i></i></button>
+                    <button class="music__btn"><i class="fas fa-random"></i></button>
+                </div>
+            </section>
             <div class="header__weather">
             </div>
-        </section>
+        </div>
     </header>
     <main class="main">
         <section class="menu ">
@@ -50,7 +50,7 @@
                     <div class="menu__title menu-home "><button class="menu__title-btn" data-value="Home">Home</button></div>
                     <div class="menu__title menu-movie "><button class="menu__title-btn" data-value="Movie">Movie</button></div>
                     <li class="menu__item menu-scene "><button class="menu__item__btn" data-value="Scene">Scene</button></li>
-                    <li class="menu__item menu-illustration "><button class="menu__item__btn" data-value="Illustration">Illustration</button></li>
+                    <li class="menu__item menu-illustration "><button class="menu__item__btn" data-value="Illust">Illust</button></li>
                     <li class="menu__item menu-sound-track "><button class="menu__item__btn" data-value="Sound-Track">Sound Track</button></li>
                 </ul>
             </div>
@@ -74,106 +74,119 @@
                 </ul>
             </div>
         </section>
+        <div class="header__name-container">
+            <form class="header__name-form name-hide" action="">
+                <input class="header__name-input" type="text" placeholder="What is your name?">
+            </form>
+            <span class="header__name name-hide">welcome Choi</span>
+        </div>
         <span class="title">lala land</span>
         <section class="movie">
-            <header class="movie-header">
-                <i class="fas fa-film movie-header__icon"></i>
-                <span class="movie-header-text">Movie</span>
+            <header class="movie__header">
+                <i class="fas fa-film movie__header__icon"></i>
+                <span class="movie__header__text">Movie</span>
             </header>
             <section class="movie__scene">
-                <header class="movie__scene-header">Scene</header>
-                <div class="movie__scene-content">
-                    <button class="movie__scene-btn movie__scene-left-btn">
+                <div class="scene__content">
+                    <button class="scene__btn scene__left-btn">
                         <i class="fas fa-arrow-left" data-id="left-btn"></i>
                     </button>
-                    <div class="movie__scene-wrapper">
-                        <ul class="movie__scene-slider">
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo1.jpg" alt="">
+                    <div class="scene__wrapper">
+                        <ul class="scene__slider">
+                            <header class="scene__header">Scene</header>
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo1.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo2.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo2.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo3.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo3.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo4.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo4.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo5.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo5.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo6.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo6.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo7.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo7.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo8.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo8.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo9.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo9.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo10.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo10.jpg" alt="">
                             </li>
-                            <li class="movie__scene-slider-item">
-                                <img class="movie__scene-photo" src="img/scene/scene photo11.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo11.jpg" alt="">
+                            </li>
+                            <li class="scene__slider__item">
+                                <img class="scene__photo" src="img/scene/scene photo12.jpg" alt="">
                             </li>
                         </ul>
                     </div>
-                    <button class="movie__scene-btn movie__scene-right-btn">
+                    <button class="scene__btn scene__right-btn">
                         <i class="fas fa-arrow-right" data-id="right-btn" ></i>
                     </button>
                 </div>
             </section>
-            <section class="movie__illustration">
-                <header class="movie__illustration-header">Illustration</header>
-                <div class="movie__illustration-content">
-                    <button class="movie__illustration-btn movie__illustration-left-btn">
+            <section class="movie__illust">
+                <header class="illust__header">Illust</header>
+                <div class="illust__content">
+                    <button class="illust__btn illust__left-btn">
                         <i class="fas fa-arrow-left" data-id="left-btn"></i>
                     </button>
-                    <div class="movie__illustration-wrapper">
-                        <ul class="movie__illustration-slider">
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust1.jpg" alt="">
+                    <div class="illust__wrapper">
+                        <ul class="illust__slider">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust1.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust2.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust2.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust3.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust3.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust4.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust4.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust5.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust5.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust6.gif" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust6.gif" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust7.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust7.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust8.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust8.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust9.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust9.jpg" alt="">
                             </li>
-                            <li class="movie__illustration-slider-item">
-                                <img class="movie__illustration-photo" src="img/illust/illust10.jpg" alt="">
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust10.jpg" alt="">
+                            </li>
+                            <li class="illust__slider__item">
+                                <img class="illust__photo" src="img/illust/illust11.jpg" alt="">
                             </li>
                         </ul>
                     </div>
-                    <button class="movie__illustration-btn movie__illustration-right-btn">
+                    <button class="illust__btn illust__right-btn">
                         <i class="fas fa-arrow-right" data-id="right-btn" ></i>
                     </button>
                 </div>
             </section>
         </section>
+    </section>
     </main>
 </body>
 </html>
