@@ -2,10 +2,12 @@
     --sky-blue-color:#A5F7FF;
     --white-color:#FFFFFF;
     --black-color:#060400;
+    --user-color:#5847A3;
+    --menu-header-color:#928BEB;
     
     /*size*/
     --menu-title-size:30px;
-    --menu-todo-btn-size:30px;
+    --menu-todo-btn-size:40px;
     --list-text-size:20px;
     --title-size:7.5em;
 
@@ -36,26 +38,38 @@
 }
 
 .menu__header{
+    width: 70%;
+    padding:12px;
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .menu__btn{
-    color:var(--white-color);
     cursor: pointer;
     will-change: transform;
     border-radius: 50%;
     padding:5px;
     border:var(--border);
-    margin-right:20px;
+    margin-right:12px;
     width:var(--menu-todo-btn-size);
     height: var(--menu--todo-btn-size);
-    font-size:15px;
+    font-size:23px;
+    transform: rotate(90deg);
+
+    transition:all 0.3s ease;
+    color:var(--white-color);
 }
 
 .menu__text{
-    font-size:25px;
     color:var(--white-color);
+    font-size:25px;
+    transition:all 0.3s ease;
+}
+
+.menu:hover .menu__btn{
+    transform:rotate(0);
+    background-color: var(--white-color);
+    color:var(--menu-header-color);
 }
 
 .menu__content{
@@ -66,8 +80,7 @@
     width: 2px;
     height: 100%;
     background-color: var(--white-color);
-    margin-left:4.5%;
-    margin-right:30px;
+    margin-left:30px;
 }
 
 .menu__list{
@@ -77,146 +90,122 @@
     color:var(--white-color);
 }
 
-.menu__title{
-    margin-top:7%;
-    margin-bottom:5%;
-}
-
 .menu__title-btn{
     color:var(--white-color);
-    font-size: var(--menu-title-size);
+    font-size: 32px;
 }
 
 .menu__item{
     list-style: none;
-    margin:7% 5%;
+}
+
+.menu__title,
+.menu__item{
+    width: 50%;
+    padding:12px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu__title:hover,
+.menu__item:hover{
+    color:var(--user-color);
+    background-color: var(--menu-header-color);
 }
 
 .menu__item__btn{
     color:var(--white-color);
-    font-size: var(--list-text-size);
+    font-size: 20px;
 }
 
-.menu-hide{
-    visibility: hidden;
+.menu__vertical,
+.menu-home,
+.menu-movie,
+.menu-scene,
+.menu-illust{
+    opacity:0;
+    transition:opacity 0.3s ease;
 }
 
-.scrollUp_vertical{
-    animation:verticalHide 0.2s ease forwards;
+.follow-btns-container{
+    position: fixed;
+    top:85%;
+    left:3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.scrollUp_home{
-    animation:scrollUp 0.2s ease forwards;
-    animation-delay: 0.4s;
+.follow-btns__header{
+    font-size:12px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    margin:12px;
 }
 
-.scrollUp_movie{
-    animation:scrollUp 0.2s ease forwards;
-    animation-delay: 0.3s;
+.follow-btn{
+    color:var(--white-color);
+    transition:all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    border-radius:50%;
+    font-size:15px;
 }
 
-.scrollUp_scene{
-    animation:scrollUp 0.2s ease forwards;
-    animation-delay: 0.2s;
-}
-
-
-.scrollUp_illustration{
-    animation:scrollUp 0.2s ease forwards;
-    animation-delay: 0.1s;
-}
-
-.scrollUp_sound-track{
-    animation:scrollUp 0.2s ease forwards;
-}
-
-.scrollDown_vertical{
-    animation:verticalShow 0.2s ease forwards;
-}
-
-
-.scrollDown_home{
-    animation:scrollDown 0.2s ease forwards;
-}
-
-.scrollDown_movie{
-    animation:scrollDown 0.2s ease forwards;
-    animation-delay: 0.1s;
-}
-
-.scrollDown_scene{
-    animation:scrollDown 0.3s ease forwards;
-    animation-delay: 0.2s;
-}
-
-
-.scrollDown_illustration{
-    animation:scrollDown 0.3s ease forwards;
-    animation-delay: 0.3s;
-}
-
-.scrollDown_sound-track{
-    animation:scrollDown 0.3s ease forwards;
-    animation-delay: 0.4s;
-}
-
-@keyframes verticalHide{
-    from{
-        opacity: 1;
-    }to{
-        opacity: 0;
-    }
-}
-
-
-@keyframes verticalShow{
-    from{
-        opacity: 0;
-    }to{
-        opacity: 1;
-    }
-}
-
-@keyframes scrollDown {
-    0%{
-        transform: translateY(-5%);
-        opacity:0;
-    }
-    50%{
-        transform: none;
-        opacity:0.5;
-    }
-    100%{
-        transform: none;
-        opacity:1;
-    }
-}
-
-@keyframes scrollUp {
-    0%{
-        transform: none;
-        opacity:1;
-    }
-    50%{
-        transform: translateY(-5%);
-        opacity:1;
-    }
-    100%{
-        transform: translateY(-5%);
-        opacity:0;
-}
+.follow-btns-container:hover .follow-btn{
+    color:var(--menu-header-color);
+    background: var(--white-color);
+    border:rgba(0,0,0,0.4) 1px solid;
 }
 
 
 .title{
     position: absolute;
-    top:3%;
+    top:150px;
     align-self: center;
     color:var(--white-color);
     text-transform: uppercase;
     font-size:var(--title-size);
     margin: 0;
     font-weight: bold;
+}
+
+.name-container{
+    position: absolute;
+    top:8%;
+    width: 20%;
+}
+
+.name{
+    color: var(--white-color);
+    font-size:var(--header-name-size);
+}
+
+.name-form{
+    width: 100%;
+    border:var(--border);
+    border-radius: 12px;
+    padding:12px;
+}
+
+.name-form:focus-within{
+    background-color: var(--menu-header-color);
+}
+
+.name-input{
+    text-align: center;
+    width: 100%;
+    color:var(--white-color);
+}
+
+.name-input::placeholder{
+    color:var(--white-color);
+    text-align: center;
+    font-size: 20px;
+}
+
+.name-hide{
+    display: none;
 }
 
 .todo{
@@ -238,6 +227,10 @@
     justify-content: center;
 }
 
+.todo__form:focus-within{
+    background-color: var(--menu-header-color);
+}
+
 .todo__header{
     display: flex;
     margin-bottom: 15px;
@@ -254,6 +247,14 @@
     border-radius: 50%;
     border: var(--border);
     color:var(--white-color);
+    transform: rotate(90deg);
+    transition: all 0.3s ease;
+}
+
+.todo:hover .todo__btn{
+    background-color: white;
+    color:var(--menu-header-color);
+    transform:rotate(0);
 }
 
 .todo__input{
@@ -269,11 +270,13 @@
     padding:3%;
     text-align: center;
     border:var(--border);
-    height: 10%;
+    height: 5%;
     width: 70%;
     border-radius: 12px;
+    background-color:var(--menu-header-color);
     margin-bottom: 15px;
-    transition: visibility 0.3s ease;
+    opacity: 0;
+    transition: opacity 200ms ease;
 }
 
 .todo-list-header{
@@ -303,16 +306,4 @@
 
 .todo-del-btn{
     font-size:25px;
-}
-
-.scrollUp-todo{
-    animation:scrollUp 0.2s ease forwards;
-}
-
-.scrollDown-todo{
-    animation:scrollDown 0.2s ease forwards;
-}
-
-.todo-hide{
-    visibility:hidden;
 }

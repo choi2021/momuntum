@@ -1,8 +1,8 @@
 'use strict';
 
-const nameForm = document.querySelector(".header__name-form");
-const nameInput = document.querySelector(".header__name-input");
-const nameContainer = document.querySelector(".header__name");
+const nameForm = document.querySelector(".name-form");
+const nameInput = document.querySelector(".name-input");
+const nameContainer = document.querySelector(".name");
 const USER_LS = "user";
 
 function saveName(text) {

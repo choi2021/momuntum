@@ -8,6 +8,8 @@
     /*size*/
     --user-header-font:40px;
     --player-font:24px;
+    --photo-width:377px;
+    --photo-height:330px;
 
     /*border*/
     --border:2px solid var(--white-color);
@@ -18,9 +20,9 @@
 .movie{
     position: absolute;
     top:50%;
-    left:15%;
-    padding:3%;
-    width: 100%;
+    left:13%;
+    padding: 2%;
+    width: 88%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -44,6 +46,8 @@
 
 .movie__scene,
 .movie__illust{
+    display: flex;
+    flex-direction: column;
     padding:3%;
     height: 10%;
     width: 100%;
@@ -51,23 +55,22 @@
 }
 
 .scene__header,
-.illust__header,
-.sound-track__header{
+.illust__header{
     font-size:35px;
     color:var(--white-color);
+    margin:24px;
 }
 
 .scene__content,
-.illust__content,
-.sound-track__content{
+.illust__content{
     display: flex;
     align-items: center;
     height: 100%;
     width: 100%;
 }
 
-.scene__btn,
-.illust__btn{
+.scene__slider-btn,
+.illust__slider-btn{
     font-size:25px;
     color:white;
 }
@@ -76,15 +79,17 @@
 .illust__wrapper{
     position: relative;
     display: flex;
+    justify-content: space-evenly;
     align-items: center;
-    width:82%;
-    height: 300px;
+    width:calc(var(--photo-width)*3);
+    height: var(--photo-height);
     overflow-x: hidden;
+    margin-bottom:20px;
 }
 
 .scene__slider,
-.illust__slider,
-.sound-track__slider{
+.illust__slider{
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -93,16 +98,17 @@
 
 .scene__slider__item,
 .illust__slider__item{
-    display: inline-block;
-    margin-right:20px;
+    display: flex;
     cursor: pointer;
 }
 
 .scene__photo,
 .illust__photo{
-    width:350px;
-    height:280px;
+    display: inline-block;
+    width:var(--photo-width);
+    height:var(--photo-height);
     border:var(--photo-border) transparent;
+    border-radius: 24px;
     transition:all 0.3s ease;
 }
 
@@ -112,3 +118,20 @@
     border:var(--photo-border) var(--white-color);
 }
 
+.photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+}
+
+.scene__btns,
+.illust__btns{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.scene__btn,
+.illust__btn{
+    -webkit-appearance: radio;
+}

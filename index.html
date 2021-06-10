@@ -27,11 +27,11 @@
             <section class="music">
                 <span class="music__title">Another day of sun</span>
                 <div class="music__btns">
-                    <button class="music__btn"><i class="fas fa-redo"></i></button>
-                    <button class="music__btn"><i class="fas fa-step-backward"></i></button>
-                    <button class="music__btn"><i class="fas fa-play"></i></button>
-                    <button class="music__btn"><i class="fas fa-step-forward"></i></i></button>
-                    <button class="music__btn"><i class="fas fa-random"></i></button>
+                    <button class="music__btn redo-btn"><i class="fas fa-redo" data-value="redo"></i></button>
+                    <button class="music__btn"><i class="fas fa-step-backward" data-value="backward"></i></button>
+                    <button class="music__btn"><i class="fas fa-play play" data-value="play"></i></button>
+                    <button class="music__btn"><i class="fas fa-step-forward" data-value="forward"></i></i></button>
+                    <button class="music__btn random-btn"><i class="fas fa-random" data-value="refresh"></i></button>
                 </div>
             </section>
             <div class="header__weather">
@@ -41,17 +41,16 @@
     <main class="main">
         <section class="menu ">
             <header class="menu__header">
-                <button class="menu__btn" data-key="header-icon" data-value="scroll"><i class="fas fa-bars" data-key="header-icon" data-value="scroll" ></i></button>
-                <button class="menu__text" data-key="header-text" data-value="scroll">Menu</button>
+                <button class="menu__btn header__btn" data-key="header-icon" data-value="scroll"><i class="fas fa-bars" data-key="header-icon" data-value="scroll" ></i></button>
+                <button class="menu__text header__btn" data-key="header-text" data-value="scroll">Menu</button>
             </header>
-            <div class="menu__content menu-hide">
+            <div class="menu__content">
                 <div class="menu__vertical"></div>
                 <ul class="menu__list">
-                    <div class="menu__title menu-home "><button class="menu__title-btn" data-value="Home">Home</button></div>
-                    <div class="menu__title menu-movie "><button class="menu__title-btn" data-value="Movie">Movie</button></div>
-                    <li class="menu__item menu-scene "><button class="menu__item__btn" data-value="Scene">Scene</button></li>
-                    <li class="menu__item menu-illustration "><button class="menu__item__btn" data-value="Illust">Illust</button></li>
-                    <li class="menu__item menu-sound-track "><button class="menu__item__btn" data-value="Sound-Track">Sound Track</button></li>
+                    <div class="menu__title menu-home"><button class="menu__title-btn" data-value="Home">Home</button></div>
+                    <div class="menu__title menu-movie"><button class="menu__title-btn" data-value="Movie">Movie</button></div>
+                    <li class="menu__item menu-scene"><button class="menu__item__btn" data-value="Scene">Scene</button></li>
+                    <li class="menu__item menu-illust"><button class="menu__item__btn" data-value="Illust">Illust</button></li>
                 </ul>
             </div>
         </section>
@@ -63,126 +62,201 @@
                 </form>
                 <button class="todo__btn finished-btn"><i class="far fa-thumbs-up"></i></button>
             </header>
-            <div class="todo-list-container pending-container todo-hide">
+            <div class="todo-list-container pending-container">
                 <header class="todo-list-header">Pending</header>
                 <ul class="todo-list pending-list">
                 </ul>
             </div>
-            <div class="todo-list-container finished-container todo-hide">
+            <div class="todo-list-container finished-container">
                 <header class="todo-list-header">Finished</header>
                 <ul class="todo-list finished-list">
                 </ul>
             </div>
         </section>
-        <div class="header__name-container">
-            <form class="header__name-form name-hide" action="">
-                <input class="header__name-input" type="text" placeholder="What is your name?">
+        <span class="title">la la land</span>
+        <div class="name-container">
+            <form class="name-form name-hide" action="">
+                <input class="name-input" type="text" placeholder="What is your name?">
             </form>
-            <span class="header__name name-hide">welcome Choi</span>
+            <span class="name name-hide">welcome Choi</span>
         </div>
-        <span class="title">lala land</span>
+        <section class="follow-btns-container">
+            <header class="follow-btns__header">Visit la la land</header>
+            <div class="follow-btns">
+                <a href="https://www.facebook.com/LaLaLand" target="_blank">
+                    <button class="follow-btn face-book">
+                        <i class="fab fa-facebook-square"></i>
+                    </button>
+                </a>
+                <a href="https://twitter.com/lalaland" target="_blank">
+                    <button class="follow-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                    </button>
+                </a>
+                <a href="https://www.instagram.com/LaLaLand/" target="_blank">
+                    <button class="follow-btn instagram">
+                        <i class="fab fa-instagram"></i>
+                    </button>
+                </a>
+            </div>
+        </section>
         <section class="movie">
             <header class="movie__header">
                 <i class="fas fa-film movie__header__icon"></i>
                 <span class="movie__header__text">Movie</span>
             </header>
             <section class="movie__scene">
+                <header class="scene__header">Scene</header>
                 <div class="scene__content">
-                    <button class="scene__btn scene__left-btn">
+                    <button class="scene__slider-btn scene__left-btn">
                         <i class="fas fa-arrow-left" data-id="left-btn"></i>
                     </button>
                     <div class="scene__wrapper">
                         <ul class="scene__slider">
-                            <header class="scene__header">Scene</header>
                             <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo1.jpg" alt="">
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo1.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo2.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo3.jpg" alt="">
+                                </div>
                             </li>
                             <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo2.jpg" alt="">
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo4.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo5.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo6.jpg" alt="">
+                                </div>
                             </li>
                             <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo3.jpg" alt="">
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo7.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo8.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo9.jpg" alt="">
+                                </div>
                             </li>
                             <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo4.jpg" alt="">
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo10.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo11.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo12.jpg" alt="">
+                                </div>
                             </li>
                             <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo5.jpg" alt="">
-                            </li>
-                            <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo6.jpg" alt="">
-                            </li>
-                            <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo7.jpg" alt="">
-                            </li>
-                            <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo8.jpg" alt="">
-                            </li>
-                            <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo9.jpg" alt="">
-                            </li>
-                            <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo10.jpg" alt="">
-                            </li>
-                            <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo11.jpg" alt="">
-                            </li>
-                            <li class="scene__slider__item">
-                                <img class="scene__photo" src="img/scene/scene photo12.jpg" alt="">
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo13.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo14.jpg" alt="">
+                                </div>
+                                <div class="scene__photo">
+                                    <img class="photo" src="img/scene/scene photo15.jpg" alt="">
+                                </div>
                             </li>
                         </ul>
                     </div>
-                    <button class="scene__btn scene__right-btn">
+                    <button class="scene__slider-btn scene__right-btn">
                         <i class="fas fa-arrow-right" data-id="right-btn" ></i>
                     </button>
+                </div>
+                <div class="scene__btns">
+                    <input class="scene__btn" data-value="first" name="scene" type="radio" checked>
+                    <input class="scene__btn" data-value="second" name="scene" type="radio">
+                    <input class="scene__btn" data-value="third" name="scene" type="radio">
+                    <input class="scene__btn" data-value="fourth" name="scene" type="radio">
+                    <input class="scene__btn" data-value="fifth" name="scene" type="radio">
                 </div>
             </section>
             <section class="movie__illust">
                 <header class="illust__header">Illust</header>
                 <div class="illust__content">
-                    <button class="illust__btn illust__left-btn">
+                    <button class="illust__slider-btn illust__left-btn">
                         <i class="fas fa-arrow-left" data-id="left-btn"></i>
                     </button>
                     <div class="illust__wrapper">
                         <ul class="illust__slider">
                             <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust1.jpg" alt="">
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust1.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust2.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust3.jpg" alt="">
+                                </div>
                             </li>
                             <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust2.jpg" alt="">
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust4.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust5.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust6.gif" alt="">
+                                </div>
                             </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust3.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust7.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust8.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust9.jpg" alt="">
+                                </div>
                             </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust4.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust10.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/illust/illust11.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/scene/scene photo12.jpg" alt="">
+                                </div>
                             </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust5.jpg" alt="">
-                            </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust6.gif" alt="">
-                            </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust7.jpg" alt="">
-                            </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust8.jpg" alt="">
-                            </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust9.jpg" alt="">
-                            </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust10.jpg" alt="">
-                            </li>
-                            <li class="illust__slider__item">
-                                <img class="illust__photo" src="img/illust/illust11.jpg" alt="">
+                            <li class="scene__slider__item">
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/scene/scene photo13.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/scene/scene photo14.jpg" alt="">
+                                </div>
+                                <div class="illust__photo">
+                                    <img class="photo" src="img/scene/scene photo15.jpg" alt="">
+                                </div>
                             </li>
                         </ul>
                     </div>
-                    <button class="illust__btn illust__right-btn">
+                    <button class="illust__slider-btn illust__right-btn">
                         <i class="fas fa-arrow-right" data-id="right-btn" ></i>
                     </button>
+                </div>
+                <div class="illust__btns">
+                    <input class="illust__btn" data-value="first" name="illust" type="radio" checked>
+                    <input class="illust__btn" data-value="second" name="illust" type="radio">
+                    <input class="illust__btn" data-value="third" name="illust" type="radio">
+                    <input class="illust__btn" data-value="fourth" name="illust" type="radio">
+                    <input class="illust__btn" data-value="fifth" name="illust" type="radio">
                 </div>
             </section>
         </section>

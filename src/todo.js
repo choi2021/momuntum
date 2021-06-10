@@ -12,29 +12,43 @@ const PENDING_LS = "pending";
 const FINISHED_LS = "finished"
 let PENDING_TODOS = [];
 let FINISHED_TODOS = [];
+let clickedPending = false;
+let clickedFinsihed = false;
 
-function onClickPenidngBtn() {
-    if (pendingContainer.classList.contains("todo-hide")) {
-        pendingContainer.classList.remove("todo-hide");
-        pendingContainer.classList.remove("scrollUp-todo");
-        pendingContainer.classList.add("scrollDown-todo");
+function onClickPendingBtn() {
+    if (!clickedPending) {
+        showPending();
+        clickedPending = true;
     } else {
-        pendingContainer.classList.add("scrollUp-todo");
-        pendingContainer.classList.remove("scrollDown-todo");
-        setTimeout(() => pendingContainer.classList.add("todo-hide"), 300);
+        hidePending();
+        clickedPending = false;
     }
 }
 
 function onClickFinishedBtn() {
-    if (finishedContainer.classList.contains("todo-hide")) {
-        finishedContainer.classList.remove("todo-hide");
-        finishedContainer.classList.remove("scrollUp-todo");
-        finishedContainer.classList.add("scrollDown-todo");
+    if (!clickedFinsihed) {
+        showFinished();
+        clickedFinsihed = true;
     } else {
-        finishedContainer.classList.add("scrollUp-todo");
-        finishedContainer.classList.remove("scrollDown-todo");
-        setTimeout(() => finishedContainer.classList.add("todo-hide"), 300);
+        hideFinished();
+        clickedFinsihed = false;
     }
+}
+
+function showPending() {
+    pendingContainer.style.opacity = `1`;
+}
+
+function hidePending() {
+    pendingContainer.style.opacity = `0`;
+}
+
+function showFinished() {
+    finishedContainer.style.opacity = `1`;
+}
+
+function hideFinished() {
+    finishedContainer.style.opacity = `0`;
 }
 
 function onSubmit(event) {
@@ -162,15 +176,15 @@ function onClickFinished(event) {
     }
 }
 
-pendingBtn.addEventListener("click", onClickPenidngBtn);
+pendingBtn.addEventListener("click", onClickPendingBtn);
 finishedBtn.addEventListener("click", onClickFinishedBtn);
 const loadedPending = localStorage.getItem(PENDING_LS);
 const loadedFinished=localStorage.getItem(FINISHED_LS);
 if (loadedPending !== null||loadedFinished!==null) {
     const parsedPending = JSON.parse(loadedPending);
     const parsedFinished = JSON.parse(loadedFinished);
-    parsedPending.forEach(todo => showPendingTodo(todo.text))
-    parsedFinished.forEach(todo => showFinishedTodo(todo.text))
+    parsedPending&&parsedPending.forEach(todo => showPendingTodo(todo.text))
+    parsedFinished&&parsedFinished.forEach(todo => showFinishedTodo(todo.text))
 };
 todoForm.addEventListener("submit", onSubmit);
 pendingList.addEventListener("click", onClickPending);
