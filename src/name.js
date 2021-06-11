@@ -20,7 +20,7 @@ function onSubmit(event){
 function showName(text) {
     nameForm.classList.add("name-hide");
     nameContainer.classList.remove("name-hide");
-    nameContainer.innerText = `Welcome to SEB's ${text}`;
+    nameContainer.innerHTML = `Welcome ${text}`;
 }
 
 function askForName() {

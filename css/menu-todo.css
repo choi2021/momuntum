@@ -137,10 +137,14 @@
 }
 
 .follow-btns__header{
-    font-size:12px;
+    font-size:1px;
     color: var(--white-color);
     text-transform: uppercase;
     margin:12px;
+}
+
+.header__lalaland{
+    font-family: "Yasashii-bold";  
 }
 
 .follow-btn{
@@ -180,6 +184,7 @@
 .name{
     color: var(--white-color);
     font-size:var(--header-name-size);
+    font-family: "carter-one";
 }
 
 .name-form{
