@@ -175,44 +175,6 @@
     font-family: "Yasashii-bold";   
 }
 
-.name-container{
-    position: absolute;
-    top:8%;
-    width: 20%;
-}
-
-.name{
-    color: var(--white-color);
-    font-size:var(--header-name-size);
-    font-family: "carter-one";
-}
-
-.name-form{
-    width: 100%;
-    border:var(--border);
-    border-radius: 12px;
-    padding:12px;
-}
-
-.name-form:focus-within{
-    background-color: var(--menu-header-color);
-}
-
-.name-input{
-    text-align: center;
-    width: 100%;
-    color:var(--white-color);
-}
-
-.name-input::placeholder{
-    color:var(--white-color);
-    text-align: center;
-    font-size: 20px;
-}
-
-.name-hide{
-    display: none;
-}
 
 .todo{
     position: absolute;

@@ -18,7 +18,7 @@
 
     /*size*/
     --header-time-size:50px;
-    --header-name-size:35px;
+    --header-name-size:30px;
 
     /*border*/
     --border:2px solid var(--white-color);
@@ -63,9 +63,54 @@ body{
     color:var(--white-color);
 }
 
+.header-time-name{
+    display: flex;
+    align-self: center;
+}
+
 .header__time{
     font-size: var(--header-time-size);
     margin-right:40px;
+}
+
+.name-container{
+    width: 100%;
+    margin-left:50px;
+    display: flex;
+    align-self: center;
+}
+
+.name{
+    color: var(--white-color);
+    font-size:var(--header-name-size);
+    font-family: "carter-one";
+}
+
+.name-form{
+    width: 100%;
+    border:var(--border);
+    border-radius: 12px;
+    padding:12px;
+}
+
+.name-form:focus-within{
+    background-color: var(--menu-header-color);
+}
+
+.name-input{
+    text-align: center;
+    width: 100%;
+    color:var(--white-color);
+}
+
+.name-input::placeholder{
+    color:var(--white-color);
+    text-align: center;
+    font-size: 20px;
+}
+
+.name-hide{
+    display: none;
 }
 
 .weather-music-container{
