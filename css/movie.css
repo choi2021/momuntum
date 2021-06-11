@@ -127,10 +127,25 @@
 .illust__btns{
     width: 100%;
     height: 100%;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
-.scene__btn,
-.illust__btn{
-    -webkit-appearance: radio;
+input[type="radio"],
+input[type="radio"]:checked{
+    appearance: none;
+    width:12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+input[type="radio"]{
+    background-color: var(--white-color);
+    border: var(--border);
+}
+
+input[type="radio"]:checked{
+    background-color: var(--player-color);
 }
