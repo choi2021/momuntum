@@ -1,0 +1,166 @@
+.header{
+    padding:1.5em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:var(--white-color);
+}
+
+.header-time-name{
+    display: flex;
+    align-self: center;
+}
+
+.header__time{
+    font-size: var(--header-time-size);
+}
+
+.header__time-container{
+    transition: all ease 0.3s;  
+    border-radius: 1em;
+    padding:0.75em;
+}
+
+.header__time-container:hover{
+    background-color:var(--white-color); 
+    color:var(--player-color);
+}
+
+.name-container{
+    width: 100%;
+    margin-left:50px;
+    display: flex;
+    align-self: center;
+    padding:0.75em;
+    transition: all 0.3s ease;
+    border-radius:0.75em;
+}
+
+.name-container:hover{
+    background-color: var(--white-color);
+}
+
+
+.name{
+    color: var(--white-color);
+    font-size:var(--header-name-size);
+}
+
+.name-container:hover .name{
+    color:var(--player-color);
+}
+
+.name-form{
+    width: 100%;
+    border:var(--border);
+    border-radius:0.75em;
+    padding:0.75em;
+}
+
+.name-form:focus-within{
+    background-color: var(--menu-header-color);
+}
+
+.name-input{
+    text-align: center;
+    width: 100%;
+    color:var(--white-color);
+}
+
+.name-input::placeholder{
+    color:var(--white-color);
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.name-hide{
+    display: none;
+}
+
+.weather-music-container{
+    width: 25%;
+    margin-right: 0.75em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.music{
+    margin-right:0.5em;
+    height: 80%;
+    width:50% ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.music__title{
+    color: var(--white-color);
+    font-size: var(--header-music-size);
+    padding:0.3em;
+    border-radius: 1em;
+    border:2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.music:hover .music__title{
+    background: var(--white-color);
+    color: var(--player-color);
+    font-weight: bold;
+    border:var(--border);
+}
+
+.music__btns{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--white-color);
+    will-change: transform;
+    padding:0.2em;
+}
+
+.music:hover .music__btn{
+    color: var(--player-color);
+    background-color: var(--white-color);
+}
+.music__btn{
+    color:var(--white-color);
+    font-size:0.5em;
+    padding:0.5em;
+    width:2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:5px;
+    will-change: transform;
+}
+
+.redo-btn,
+.random-btn{
+    opacity: 0.6;
+    font-size:0.5em;
+    padding:6px;
+}
+
+.header__weather{
+    font-size:var( --header-weather-size);
+    padding:0.1em;
+    border-radius: 0.75em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    transition: 0.3s all ease-in-out;
+    user-select: none;
+}
+
+.header__weather:hover{
+    color:var(--player-color);
+    background-color: var(--white-color);
+}
+
+
+

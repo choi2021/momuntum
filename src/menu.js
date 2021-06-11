@@ -78,8 +78,9 @@ function onClickMenuContent(event) {
             const scene = document.querySelector(".movie__scene");
             const sceneRect = scene.getBoundingClientRect();
             const sceneTop = sceneRect.top;
+            const sceneHeight = sceneRect.height;
             window.scrollBy({
-                top: sceneTop,
+                top: sceneTop-sceneHeight/5,
                 behavior: "smooth",
                 left: 0
             });
@@ -88,22 +89,13 @@ function onClickMenuContent(event) {
             const illust = document.querySelector(".movie__illust");
             const illustRect = illust.getBoundingClientRect();
             const illustTop = illustRect.top;
+            const illustHeight = illustRect.height;
             window.scrollBy({
-                top: illustTop,
+                top: illustTop-illustHeight/5,
                 behavior: "smooth",
                 left: 0
             });
             break;
-        case "Sound-Track":
-            const soundTrack = document.querySelector(".movie__sound-track");
-            const soundTrackRect = soundTrack.getBoundingClientRect();
-            const soundTrackTop = soundTrackRect.top;
-            window.scrollBy({
-                top: soundTrackTop,
-                behavior: "smooth",
-                left: 0
-            });
-                break;
         default:
             throw Error(`Click Wrong Button`);
     }

@@ -1,3 +1,4 @@
+@import "./header.css";
 @import "./menu-todo.css";
 @import "./movie.css";
 
@@ -15,13 +16,29 @@
     --white-color:#FFFFFF;
     --black-color:#060400;
     --player-color:#6683D9;
+    --menu-color:#5b4399;
 
     /*size*/
-    --header-time-size:50px;
-    --header-name-size:30px;
+    --header-time-size:3.125em;
+    --header-name-size:1.875em;
+    --header-weather-size:1.125em;
+    --header-music-size:1em;
+    --menu-title-size:1.8em;
+    --menu-todo-btn-size:1.6em;
+    --menu-title-btn:2em;
+    --menu-item-btn:1.3em;
+    --todo-placeholder:0.85em;
+    --list-text-size:1.5em;
+    --title-size:7.5em;
+    --user-header-font:2.5em;
+    --player-font:1.3em;
 
+    --photo-width:25vw;
+    --photo-height:45vh;
+    
     /*border*/
     --border:2px solid var(--white-color);
+    --photo-border:4px solid;
 }
 
 *{
@@ -36,7 +53,7 @@ button{
 }
 
 button:hover{
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 ul,input{
@@ -55,158 +72,18 @@ body{
     background-attachment: fixed;
 }
 
-.header{
-    padding:25px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color:var(--white-color);
+@media screen and (max-width:1350px) {
+    :root{
+
+        /*size*/
+    --header-time-size:3em;
+    --header-name-size:1.5em; 
+    --header-weather-size:1em;
+    --header-music-size:0.8em;
+    --menu-title-size:1.5em;
+    --menu-title-btn:1.5em;
+    --menu-item-btn:1em;
+    --todo-placeholder:12px;
+    --title-size:6.5em;
+    }
 }
-
-.header-time-name{
-    display: flex;
-    align-self: center;
-}
-
-.header__time{
-    font-size: var(--header-time-size);
-    margin-right:40px;
-}
-
-.name-container{
-    width: 100%;
-    margin-left:50px;
-    display: flex;
-    align-self: center;
-    padding:12px;
-    transition: all 0.3s ease;
-    border-radius: 12px;
-}
-
-.name-container:hover{
-    background-color: var(--white-color);
-}
-
-
-.name{
-    color: var(--white-color);
-    font-size:var(--header-name-size);
-}
-
-.name-container:hover .name{
-    color:var(--player-color);
-}
-
-.name-form{
-    width: 100%;
-    border:var(--border);
-    border-radius: 12px;
-    padding:12px;
-}
-
-.name-form:focus-within{
-    background-color: var(--menu-header-color);
-}
-
-.name-input{
-    text-align: center;
-    width: 100%;
-    color:var(--white-color);
-}
-
-.name-input::placeholder{
-    color:var(--white-color);
-    text-align: center;
-    font-size: 20px;
-}
-
-.name-hide{
-    display: none;
-}
-
-.weather-music-container{
-    width: 25%;
-    margin-right: 12px;;
-    display: flex;
-    align-items: center;
-}
-
-.music{
-    margin-right:8px;
-    height: 100%;
-    width:100% ;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.music__title{
-    color: var(--white-color);
-    margin-bottom:15px;
-    font-size:16px;
-    padding:6px;
-    border-radius: 12px;
-    border:2px solid transparent;
-    transition: all 0.3s ease;
-}
-
-.music:hover .music__title{
-    background: var(--white-color);
-    color: var(--player-color);
-    font-weight: bold;
-    border:var(--border);
-}
-
-.music__btns{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white-color);
-    will-change: transform;
-    padding:8px;
-}
-
-.music:hover .music__btn{
-    color: var(--player-color);
-    background-color: var(--white-color);
-}
-.music__btn{
-    color:var(--white-color);
-    font-size:12px;
-    padding:8px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin:2px;
-    will-change: transform;
-}
-
-.redo-btn,
-.random-btn{
-    opacity: 0.6;
-    width: 20px;
-    height: 20px;
-    font-size:8px;
-    padding:6px;
-}
-
-.header__weather{
-    font-size:18px;
-    padding:5px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 40%;
-    transition: 0.3s all ease-in-out;
-    user-select: none;
-}
-
-.header__weather:hover{
-    color:var(--player-color);
-    background-color: var(--white-color);
-}
-
-
-
