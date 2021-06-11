@@ -45,11 +45,12 @@ ul,input{
 
 body{
     margin:0;
-    width:99vw;
-    height: 700vh;
+    width:100vw;
+    height: 400vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
     background: url("/img/background.jpg") center/cover no-repeat;
     background-attachment: fixed;
 }
@@ -78,12 +79,23 @@ body{
     margin-left:50px;
     display: flex;
     align-self: center;
+    padding:12px;
+    transition: all 0.3s ease;
+    border-radius: 12px;
 }
+
+.name-container:hover{
+    background-color: var(--white-color);
+}
+
 
 .name{
     color: var(--white-color);
     font-size:var(--header-name-size);
-    font-family: "carter-one";
+}
+
+.name-container:hover .name{
+    color:var(--player-color);
 }
 
 .name-form{
@@ -148,20 +160,35 @@ body{
 
 .music__btns{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     color: var(--white-color);
     will-change: transform;
+    padding:8px;
 }
 
+.music:hover .music__btn{
+    color: var(--player-color);
+    background-color: var(--white-color);
+}
 .music__btn{
     color:var(--white-color);
-    font-size:17px;
+    font-size:12px;
+    padding:8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin:2px;
+    will-change: transform;
 }
 
 .redo-btn,
 .random-btn{
     opacity: 0.6;
-    font-size:12px;
+    width: 20px;
+    height: 20px;
+    font-size:8px;
+    padding:6px;
 }
 
 .header__weather{

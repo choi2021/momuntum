@@ -8,7 +8,7 @@
     --user-header-font:40px;
     --player-font:24px;
     --photo-width:377px;
-    --photo-height:330px;
+    --photo-height:350px;
 
     /*border*/
     --border:2px solid var(--white-color);
@@ -18,11 +18,11 @@
 
 .movie{
     position: absolute;
-    top:50%;
+    top:40%;
     left:13%;
     padding: 2%;
     width: 88%;
-    height: 100%;
+    height: 250%;
     display: flex;
     flex-direction: column;
 }
@@ -50,7 +50,6 @@
     padding:3%;
     height: 10%;
     width: 100%;
-    margin-bottom:15%;
 }
 
 .scene__header,
