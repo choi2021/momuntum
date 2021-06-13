@@ -1039,4 +1039,9 @@ body{
     .illust__wrapper{
         width:calc(var(--photo-width)*2);
     }
+
+    .scene__slider-btn,
+    .illust__slider-btn{
+    font-size:1.3em;
+    }
 }
