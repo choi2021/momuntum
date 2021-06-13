@@ -1,8 +1,9 @@
 const menuHeader = document.querySelector(".menu__header");
 const menuContent = document.querySelector(".menu__content");
-const headerBtn = document.querySelector(".menu__btn");
-const headerText = document.querySelector(".menu__text");
+const headerBtn = document.querySelector(".menu__header__btn ");
+const headerText = document.querySelector(".menu__header__text");
 const menuHome = document.querySelector(".menu-home");
+const menuTodo = document.querySelector(".menu-todo");
 const menuMovie = document.querySelector(".menu-movie");
 const menuScene = document.querySelector(".menu-scene");
 const menuIllust = document.querySelector(".menu-illust");
@@ -24,6 +25,7 @@ function onClickMenuHeader(event) {
             changeHeader("down");
             menuDown(menuVertical);
             menuDown(menuHome);
+            menuDown(menuTodo);
             menuDown(menuMovie);
             menuDown(menuScene);
             menuDown(menuIllust);
@@ -32,6 +34,7 @@ function onClickMenuHeader(event) {
             changeHeader("up");
             menuUp(menuVertical);
             menuUp(menuHome);
+            menuUp(menuTodo);
             menuUp(menuMovie);
             menuUp(menuScene);
             menuUp(menuIllust);
@@ -64,23 +67,25 @@ function onClickMenuContent(event) {
             const header = document.querySelector(".header");
             header.scrollIntoView({ behavior: "smooth" });
             break;
-        case "Movie":
-            const movie = document.querySelector(".movie");
-            const movieRect = movie.getBoundingClientRect();
-            const movieTop = movieRect.top;
+        case "Todo":
+            const todo = document.querySelector(".todo");
+            const todoRect = todo.getBoundingClientRect();
+            const todoTop = todoRect.top;
+            const todoHeight = todoRect.height;
             window.scrollBy({
-                top: movieTop,
+                top: todoTop-todoHeight/12,
                 behavior: "smooth",
                 left: 0
             });
             break;
+        case "Movie":
         case "Scene":
-            const scene = document.querySelector(".movie__scene");
-            const sceneRect = scene.getBoundingClientRect();
-            const sceneTop = sceneRect.top;
-            const sceneHeight = sceneRect.height;
+            const movie = document.querySelector(".movie");
+            const movieRect = movie.getBoundingClientRect();
+            const movieTop = movieRect.top;
+            const movieHeight = movieRect.height;
             window.scrollBy({
-                top: sceneTop-sceneHeight/5,
+                top: movieTop-movieHeight/50,
                 behavior: "smooth",
                 left: 0
             });
@@ -91,7 +96,7 @@ function onClickMenuContent(event) {
             const illustTop = illustRect.top;
             const illustHeight = illustRect.height;
             window.scrollBy({
-                top: illustTop-illustHeight/5,
+                top: illustTop-illustHeight/3,
                 behavior: "smooth",
                 left: 0
             });

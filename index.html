@@ -33,7 +33,7 @@
         </div>
         <div class="weather-music-container">
             <section class="music">
-                <span class="music__title">Another day of sun</span>
+                <span class="music__title"></span>
                 <div class="music__btns">
                     <button class="music__btn redo-btn"><i class="fas fa-redo" data-value="redo"></i></button>
                     <button class="music__btn"><i class="fas fa-step-backward" data-value="backward"></i></button>
@@ -49,13 +49,14 @@
     <main class="main">
         <section class="menu ">
             <header class="menu__header">
-                <button class="menu__btn menu-todo-btn" data-key="header-icon" data-value="scroll"><i class="fas fa-bars" data-key="header-icon" data-value="scroll" ></i></button>
-                <button class="menu__text menu-todo-btn" data-key="header-text" data-value="scroll">Menu</button>
+                <button class="menu__header__btn " data-key="header-icon" data-value="scroll"><i class="fas fa-bars" data-key="header-icon" data-value="scroll" ></i></button>
+                <button class="menu__header__text " data-key="header-text" data-value="scroll">Menu</button>
             </header>
             <div class="menu__content">
                 <div class="menu__vertical"></div>
                 <ul class="menu__list">
                     <div class="menu__title menu-home"><button class="menu__title-btn" data-value="Home">Home</button></div>
+                    <li class="menu__item menu-todo"><button class="menu__item__btn" data-value="Todo">Todo</button></li>
                     <div class="menu__title menu-movie"><button class="menu__title-btn" data-value="Movie">Movie</button></div>
                     <li class="menu__item menu-scene"><button class="menu__item__btn" data-value="Scene">Scene</button></li>
                     <li class="menu__item menu-illust"><button class="menu__item__btn" data-value="Illust">Illust</button></li>
@@ -64,21 +65,23 @@
         </section>
         <section class="todo">
             <header class="todo__header">
-                <button class="todo__btn menu-todo-btn pending-btn"><i class="fas fa-list-ul"></i></button>
+                <button class="todo__header__btn pending-btn"><i class="fas fa-list-ul"></i></button>
                 <form class="todo__form">
                     <input class="todo__input" placeholder="Today's TO-DO" type="text">
                 </form>
-                <button class="todo__btn menu-todo-btn finished-btn"><i class="far fa-thumbs-up"></i></button>
+                <button class="todo__header__btn finished-btn"><i class="far fa-thumbs-up"></i></button>
             </header>
-            <div class="todo-list-container pending-container">
-                <header class="todo-list-header">Pending</header>
-                <ul class="todo-list pending-list">
-                </ul>
-            </div>
-            <div class="todo-list-container finished-container">
-                <header class="todo-list-header">Finished</header>
-                <ul class="todo-list finished-list">
-                </ul>
+            <div class="todo-container">
+                <div class="todo-list-container pending-container">
+                    <header class="todo-list-header">Pending</header>
+                    <ul class="todo-list pending-list">
+                    </ul>
+                </div>
+                <div class="todo-list-container finished-container">
+                    <header class="todo-list-header">Finished</header>
+                    <ul class="todo-list finished-list">
+                    </ul>
+                </div>
             </div>
         </section>
         <span class="title">la la land</span>

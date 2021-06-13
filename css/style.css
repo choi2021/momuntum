@@ -18,27 +18,55 @@
     --player-color:#6683D9;
     --menu-color:#5b4399;
 
-    /*size*/
+    /*header*/
+
     --header-time-size:3.125em;
-    --header-name-size:1.875em;
+    --header-name-size:1.8em;
     --header-weather-size:1.125em;
-    --header-music-size:1em;
-    --menu-title-size:1.8em;
-    --menu-todo-btn-size:1.6em;
+    --header-music-size:0.95em;
+    --name-input-font:1.1em;
+    --name-form:15vw;
+    --name-input-font:1em;
+    --music-btn-size:2em;
+    --music-btn-icon:0.8em;
+
+    /* menu */
+    --menu-header-btn:2em;
+    --menu-header-icon:1.2em;
+    --menu-header-text:2em;
+    --menu--btn-icon:1.3em;
     --menu-title-btn:2em;
     --menu-item-btn:1.3em;
-    --todo-placeholder:0.85em;
-    --list-text-size:1.5em;
-    --title-size:7.5em;
-    --user-header-font:2.5em;
-    --player-font:1.3em;
 
+    /* title */
+    --title-size:7.5em;
+
+    /*todo  */
+    --todo-header-btn:3em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:30vh;
+    --todo-placeholder:1em;
+    --list-text-size:1.5em;
+    --todo-text:1em;
+    --todo-del:1.4em;
+    --todo-input-font:1em;
+    --todo-list-header:1em;
+
+    /* movie */
+    --movie-header-icon:2em;
+    --movie-content-header:2.25em;
     --photo-width:25vw;
     --photo-height:45vh;
-    
+    --radio-size:0.7em;    
+
+    /* follow */
+    --follow-btn-size:2em;
+    --follow-btn-icon:1em;
+
     /*border*/
     --border:2px solid var(--white-color);
     --photo-border:4px solid;
+
 }
 
 *{
@@ -72,18 +100,943 @@ body{
     background-attachment: fixed;
 }
 
-@media screen and (max-width:1350px) {
+@media (max-width:1450px) and (min-width:1300px){
     :root{
-
         /*size*/
     --header-time-size:3em;
     --header-name-size:1.5em; 
     --header-weather-size:1em;
-    --header-music-size:0.8em;
+    --header-music-size:0.85em;
+    --music-btn-size:1.9em;
+    --music-btn-icon:0.8em;
+
+    --menu-text:2.2em;
+    --menu-todo-btn-size:2.3em;
+    --menu-todo-btn-icon:0.9em;
     --menu-title-size:1.5em;
     --menu-title-btn:1.5em;
     --menu-item-btn:1em;
-    --todo-placeholder:12px;
+    --todo-placeholder:0.9em;
+    --todo-text:1em;
+    --todo-input-font:0.9em;
+    
+    --movie-header-icon:1.8em;
+    --movie-content-header:1.8em;
     --title-size:6.5em;
+    --photo-height:35vh;
+    --radio-size:0.5em;   
+
+    --follow-btn-size:1.8em;
+    --follow-btn-icon:0.9em;
+    }
+}
+
+
+@media (max-width:1300px) and (min-width:1101px){
+    :root{
+        /*size*/
+    --header-time-size:3em;
+    --header-name-size:1.3em; 
+    --header-weather-size:1em;
+    --header-music-size:0.8em;
+    --music-btn-size:1.8em;
+    --music-btn-icon:0.7em;
+    --name-input-font:1em;
+    --name-form:14vw;
+
+    /*header*/  
+    -header-time-size:3.125em;
+    -header-name-size:1.8em;
+    -header-weather-size:1.125em;
+    -header-music-size:0.95em;
+    -name-input-font:1.1em;
+    -name-form:15vw;
+    -name-input-font:1em;
+    -music-btn-size:2em;
+    -music-btn-icon:0.8em;
+
+    /* menu */
+    --menu-header-btn:1.8em;
+    --menu-header-icon:1.2em;
+    --menu-header-text:1.5em;
+    --menu--btn-icon:1.3em;
+    --menu-title-btn:1.5em;
+    --menu-item-btn:1em;  
+
+    /* title */
+    --title-size:7.5em;
+
+     /*todo  */
+    --todo-header-btn:2.5em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:30vh;
+    --todo-placeholder:0.8em;
+    --list-text-size:1.5em;
+    --todo-text:1em;
+    --todo-del:1.4em;
+    --todo-input-font:1em;
+    --todo-list-header:1em;
+
+    --title-size:6.5em;
+    --movie-header-icon:1.7em;
+    --movie-content-header:2em;
+    --photo-width:23vw;
+    --photo-height:30vh;
+
+    --follow-btn-size:1.8em;
+    --follow-btn-icon:0.9em;
+    }
+}
+
+@media (max-width:1100px) and (min-width:1000px){
+    :root{
+        /*size*/
+    --header-time-size:2.5em;
+    --header-name-size:1.1em; 
+    --header-weather-size:1em;
+    --header-music-size:0.9em;
+    --music-btn-size:1.9em;
+    --music-btn-icon:0.8em;
+    --name-input-font:0.9em;
+    --name-form:14vw;
+
+    -header-time-size:3.125em;
+    -header-name-size:1.8em;
+    -header-weather-size:1.125em;
+    -header-music-size:0.95em;
+    -name-input-font:1.1em;
+    -name-form:15vw;
+    -name-input-font:1em;
+    -music-btn-size:2em;
+    -music-btn-icon:0.8em;
+
+    /* menu */
+    --menu-header-btn:1.8em;
+    --menu-header-icon:1.2em;
+    --menu-header-text:1.5em;
+    --menu--btn-icon:1.3em;
+    --menu-title-btn:1.4em;
+    --menu-item-btn:0.9em;  
+    
+     /* title */
+    --title-size:7em;
+
+     /*todo  */
+    --todo-header-btn:2.5em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:30vh;
+    --todo-placeholder:0.7em;
+    --list-text-size:1.5em;
+    --todo-text:1em;
+    --todo-del:1.4em;
+    --todo-input-font:1em;
+    --todo-list-header:1em;
+
+    --title-size:6em;
+    --movie-header-icon:1.3em;
+    --movie-content-header:1.5em;
+    --photo-width:22vw;
+    --photo-height:28vh;
+
+    --follow-btn-size:1.7em;
+    --follow-btn-icon:0.9em;
+
+    --radio-size:0.5em; 
+    }
+
+    body{
+        position: relative;
+    }
+
+
+    .music{
+        width:20%;
+        height: 3%;
+        position:absolute;
+        top:1.5%;
+        left:50%;
+    }
+
+    .music__title{
+        width:17vw;
+        height:30%;
+    }
+
+    .weather-music-container{
+        margin-right: 3.7em;
+    }
+}
+
+@media (max-width:1000px) and (min-width:900px){
+    :root{
+        /*size*/
+    --header-time-size:2.5em;
+    --header-name-size:1.2em; 
+    --header-weather-size:1em;
+    --header-music-size:0.8em;
+    --name-input-font:0.9em;
+    --name-form:15vw;
+    -music-btn-size:1.5em;
+    -music-btn-icon:0.5em;
+
+
+     /* menu */
+    --menu-header-btn:1.8em;
+    --menu-header-icon:1.2em;
+    --menu-header-text:1.3em;
+    --menu--btn-icon:1.2em;
+    --menu-title-btn:1.2em;
+    --menu-item-btn:0.8em;  
+    
+      /* title */
+    --title-size:6em;
+
+      /*todo  */
+    --todo-header-btn:2.5em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:30vh;
+    --todo-placeholder:0.9em;
+    --list-text-size:1.5em;
+    --todo-text:1.2em;
+    --todo-del:1.4em;
+    --todo-input-font:1em;
+    --todo-list-header:0.9em;
+
+    --title-size:5em;
+    --movie-header-icon:1.3em;
+    --movie-content-header:1.3em;
+    --photo-width:23vw;
+    --photo-height:29vh;
+
+    --follow-btn:1.5em;
+    --follow-btn-icon:0.7em;
+
+    --radio-size:0.5em; 
+    }
+
+    body{
+        position: relative;
+    }
+
+    .name-container{
+        margin-left: 0;
+        position: absolute;
+        left: 1.5%;
+        width:20%;
+        top:5.5%;
+        z-index: 3;
+    }
+
+    .music{
+        width:18%;
+        height: 5%;
+        position:absolute;
+        top:6%;
+        right:3%;
+        z-index: 3;
+    }
+    .menu__title,
+    .menu__item{
+        width:60%;
+    }
+    .music__title{
+        width:17vw;
+        height:20%;
+    }
+
+    .weather-music-container{
+        margin-right: 3em;
+    }
+
+    .header__weather{
+        width:50%;
+    }
+    
+    .menu{
+        margin-top:13%;
+    }
+
+    .menu-todo{
+        display: block;
+    }
+
+    .todo{
+        top:25%;
+        left:15%;
+        width: 80%;
+    }
+
+    .todo__form{
+        width:30vw;
+    }
+
+    .todo__input{
+        width:12vw;
+    }
+
+    .todo-container{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .todo-list-container{
+        padding:1.5%;
+        text-align: center;
+        border:var(--border);
+        height:var(--todo-list-contanier-height);
+        width: 30vw;
+        border-radius: 0.75em;
+        background-color:var(--menu-header-color);
+        margin-bottom: 1em;
+        opacity: 0;
+        transition: all 200ms ease;
+    }
+
+    .todo__btn{
+        font-size: 1.6em;
+        width:var(--menu-todo-btn-size);
+        height: var(--menu-todo-btn-size);
+    }
+
+    .movie{
+        left:16%;
+        width: 84%;
+    }
+}
+
+@media (max-width:900px) and (min-width:750px){ 
+    :root{
+        /*size*/
+    --header-time-size:2.5em;
+    --header-name-size:1em; 
+    --header-weather-size:1em;
+    --header-music-size:0.8em;
+    --name-input-font:0.8em;
+    --name-form:18vw;
+    -music-btn-size:1.1em;
+    -music-btn-icon:0.4em;
+
+
+     /* menu */
+    --menu-header-btn:1.5em;
+    --menu-header-icon:1.2em;
+    --menu-header-text:1.3em;
+    --menu--btn-icon:1.1em;
+    --menu-title-btn:1em;
+    --menu-item-btn:0.8em;  
+    
+      /* title */
+    --title-size:5.5em;
+
+      /*todo  */
+    --todo-header-btn:2.5em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:30vh;
+    --todo-placeholder:0.9em;
+    --list-text-size:1.5em;
+    --todo-text:1.2em;
+    --todo-del:1.4em;
+    --todo-input-font:1em;
+    --todo-list-header:0.9em;
+
+    --title-size:5em;
+    --movie-header-icon:1.3em;
+    --movie-content-header:1.3em;
+    --photo-width:22vw;
+    --photo-height:18vh;
+
+    --follow-btn:1.5em;
+    --follow-btn-icon:0.7em;
+
+    --radio-size:0.5em; 
+    }
+
+    body{
+        position: relative;
+    }
+
+    .title{
+        top:8%;
+    }
+
+    .header{
+        padding:0.5em;
+    }
+
+    .name-container{
+        margin-left: 0;
+        position: absolute;
+        left: 1.5%;
+        width:20%;
+        top:3.5%;
+        z-index: 3;
+    }
+
+    .music{
+        width:16%;
+        height: 5%;
+        position:absolute;
+        top:7%;
+        right:5%;
+        z-index: 3;
+    }
+    .menu__title,
+    .menu__item{
+        width:60%;
+    }
+    .music__title{
+        width:20vw;
+        height:16%;
+    }
+
+    .weather-music-container{
+        margin-right: 2em;
+    }
+
+    .header__weather{
+        width:50%;
+    }
+    
+    .menu{
+        margin-top:6em;
+    }
+    .menu__header__btn{
+        padding:0.3em;
+        margin:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu__vertical{
+        margin-left:1.6em;
+    }
+
+    .menu-todo{
+        display: block;
+    }
+
+    .todo{
+        top:25%;
+        left:15%;
+        width: 80%;
+    }
+
+    .todo__form{
+        width:30vw;
+    }
+
+    .todo__input{
+        width:16vw;
+    }
+
+    .todo-container{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .todo-list-container{
+        padding:1.5%;
+        text-align: center;
+        border:var(--border);
+        height:var(--todo-list-contanier-height);
+        width: 30vw;
+        border-radius: 0.75em;
+        background-color:var(--menu-header-color);
+        margin-bottom: 1em;
+        opacity: 0;
+        transition: all 200ms ease;
+    }
+
+    .todo__btn{
+        font-size: 1.6em;
+        width:var(--menu-todo-btn-size);
+        height: var(--menu-todo-btn-size);
+    }
+
+    .movie{
+        left:16%;
+        width: 84%;
+    }
+
+}
+
+@media (max-width:750px) and (min-width:650px) {
+    :root{
+        /*size*/
+    --header-time-size:2.5em;
+    --header-name-size:0.8em; 
+    --header-weather-size:0.9em;
+    --header-music-size:0.7em;
+    --name-input-font:0.8em;
+    --name-form:19vw;
+    -music-btn-size:0.9em;
+    -music-btn-icon:0.3em;
+
+
+     /* menu */
+    --menu-header-btn:1.5em;
+    --menu-header-icon:1.2em;
+    --menu-header-text:1.3em;
+    --menu--btn-icon:1.1em;
+    --menu-title-btn:1em;
+    --menu-item-btn:0.8em;  
+    
+      /* title */
+    --title-size:5em;
+
+      /*todo  */
+    --todo-header-btn:2.5em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:30vh;
+    --todo-placeholder:0.7em;
+    --list-text-size:1.5em;
+    --todo-text:1.1em;
+    --todo-del:1.4em;
+    --todo-input-font:0.9em;
+    --todo-list-header:0.8em;
+
+    --title-size:5em;
+    --movie-header-icon:1.3em;
+    --movie-content-header:1.3em;
+    --photo-width:22vw;
+    --photo-height:20vh;
+
+    --follow-btn:1.5em;
+    --follow-btn-icon:0.7em;
+
+    --radio-size:0.5em; 
+    }
+
+    body{
+        position: relative;
+    }
+
+    .title{
+        top:8%;
+    }
+
+    .header{
+        padding:0.5em;
+    }
+
+    .name-container{
+        margin-left: 0;
+        position: absolute;
+        left: 1.5%;
+        width:20%;
+        top:3.5%;
+        z-index: 3;
+    }
+
+    .music{
+        width:15%;
+        height: 5%;
+        position:absolute;
+        top:1.1%;
+        left:40%;
+        z-index: 3;
+    }
+    .menu__title,
+    .menu__item{
+        width:60%;
+    }
+    .music__title{
+        width:20vw;
+        height:18%;
+    }
+
+    .weather-music-container{
+        margin-right: 2em;
+    }
+
+    .header__weather{
+        width:60%;
+    }
+    
+    .menu{
+        margin-top:11%;
+    }
+    .menu__header__btn{
+        padding:0.3em;
+        margin:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu__vertical{
+        margin-left:1.6em;
+    }
+
+    .menu-todo{
+        display: block;
+    }
+
+    .todo{
+        top:25%;
+        left:15%;
+        width: 80%;
+    }
+
+    .todo__form{
+        width:30vw;
+    }
+
+    .todo__input{
+        width:16vw;
+    }
+
+    .todo-container{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .todo-list-container{
+        padding:1.5%;
+        text-align: center;
+        border:var(--border);
+        height:var(--todo-list-contanier-height);
+        width: 30vw;
+        border-radius: 0.75em;
+        background-color:var(--menu-header-color);
+        margin-bottom: 1em;
+        opacity: 0;
+        transition: all 200ms ease;
+    }
+
+    .todo__btn{
+        font-size: 1.6em;
+        width:var(--menu-todo-btn-size);
+        height: var(--menu-todo-btn-size);
+    }
+
+    .movie{
+        left:16%;
+        width: 84%;
+    }
+
+}
+
+@media (max-width:650px) and (min-width:500px) {
+    :root{
+        /*size*/
+    --header-time-size:2.5em;
+    --header-name-size:0.8em; 
+    --header-weather-size:0.8em;
+    --header-music-size:0.7em;
+    --name-input-font:0.8em;
+    --name-form:22vw;
+    -music-btn-size:0.5em;
+    -music-btn-icon:0.3em;
+
+
+     /* menu */
+    --menu-header-btn:1.5em;
+    --menu-header-icon:1em;
+    --menu-header-text:1em;
+    --menu--btn-icon:1.1em;
+    --menu-title-btn:0.8em;
+    --menu-item-btn:0.6em;  
+    
+      /* title */
+    --title-size:3.5em;
+
+      /*todo  */
+    --todo-header-btn:2.5em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:25vh;
+    --todo-placeholder:0.7em;
+    --todo-text:1em;
+    --todo-del:1.2em;
+    --todo-input-font:1em;
+    --todo-list-header:0.7em;
+
+    --movie-header-icon:1em;
+    --movie-content-header:1em;
+    --photo-width:20vw;
+    --photo-height:15vh;
+
+    --follow-btn:1.5em;
+    --follow-btn-icon:0.7em;
+
+    --radio-size:0.5em; 
+    }
+
+    body{
+        position: relative;
+    }
+
+    .title{
+        top:8%;
+    }
+
+    .header{
+        padding:0.5em;
+    }
+
+    .name-container{
+        margin-left: 0;
+        position: absolute;
+        left: 1.5%;
+        width:30%;
+        top:3.5%;
+        z-index: 3;
+    }
+
+    .music{
+        width:15%;
+        height: 5%;
+        position:absolute;
+        top:5.8%;
+        right:15%;
+        z-index: 3;
+    }
+    .menu__title,
+    .menu__item{
+        width:80%;
+    }
+    .music__title{
+        width:25vw;
+        height:15%;
+    }
+
+    .weather-music-container{
+        margin-right: 2em;
+    }
+
+    .header__weather{
+        width:60%;
+    }
+    
+    .menu{
+        margin-top:11%;
+    }
+    .menu__header__btn{
+        padding:0.3em;
+        margin:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu__vertical{
+        margin-left:1.6em;
+    }
+
+    .menu-todo{
+        display: block;
+    }
+
+    .todo{
+        top:25%;
+        left:15%;
+        width: 80%;
+    }
+
+    .todo__form{
+        width:30vw;
+    }
+
+    .todo__input{
+        width:16vw;
+    }
+
+    .todo-container{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .todo-list-container{
+        padding:1.5%;
+        text-align: center;
+        border:var(--border);
+        height:var(--todo-list-contanier-height);
+        width: 30vw;
+        border-radius: 0.75em;
+        background-color:var(--menu-header-color);
+        margin-bottom: 1em;
+        opacity: 0;
+        transition: all 200ms ease;
+    }
+
+    .todo__btn{
+        font-size: 1.6em;
+        width:var(--menu-todo-btn-size);
+        height: var(--menu-todo-btn-size);
+    }
+
+    .movie{
+        left:20%;
+        width: 80%;
+    }
+}
+
+@media (max-width:500px)  {
+    :root{
+        /*size*/
+    --header-time-size:2.5em;
+    --header-name-size:0.8em; 
+    --header-weather-size:0.6em;
+    --header-music-size:0.6em;
+    --name-input-font:0.8em;
+    --name-form:30vw;
+    -music-btn-size:0.3em;
+    -music-btn-icon:0.2em;
+
+
+     /* menu */
+    --menu-header-btn:1.5em;
+    --menu-header-icon:1em;
+    --menu-header-text:1em;
+    --menu--btn-icon:1.1em;
+    --menu-title-btn:0.8em;
+    --menu-item-btn:0.6em;  
+    
+      /* title */
+    --title-size:2.5em;
+
+      /*todo  */
+    --todo-header-btn:2.5em;
+    --todo-header-icon:3em;
+    --todo-list-contanier-height:25vh;
+    --todo-placeholder:0.5em;
+    --todo-text:0.8em;
+    --todo-del:1em;
+    --todo-input-font:1em;
+    --todo-list-header:0.7em;
+
+    --movie-header-icon:1em;
+    --movie-content-header:1em;
+    --photo-width:29vw;
+    --photo-height:17vh;
+
+    --follow-btn:1em;
+    --follow-btn-icon:0.7em;
+
+    --radio-size:0.5em; 
+    }
+
+    body{
+        position: relative;
+    }
+
+    .title{
+        top:9%;
+    }
+
+    .header{
+        padding:0.5em;
+    }
+
+    .name-container{
+        margin-left: 0;
+        position: absolute;
+        left: 1.5%;
+        width:30%;
+        top:3.5%;
+        z-index: 3;
+    }
+
+    .music{
+        width:50%;
+        height: 5%;
+        position:absolute;
+        top:3.5%;
+        right:0%;
+        z-index: 3;
+    }
+    .menu__title,
+    .menu__item{
+        width:80%;
+    }
+    .music__title{
+        width:27vw;
+        height:15%;
+    }
+
+    .weather-music-container{
+        margin-right: 2em;
+    }
+
+    .header__weather{
+        width:60%;
+    }
+    
+    .menu{
+        margin-top:20%;
+    }
+    .menu__header__btn{
+        padding:0.3em;
+        margin:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .menu__vertical{
+        margin-left:1.6em;
+    }
+
+    .menu-todo{
+        display: block;
+    }
+
+    .todo{
+        top:25%;
+        left:19%;
+        width: 80%;
+    }
+
+    .todo__form{
+        width:32vw;
+    }
+
+    .todo__input{
+        width:17vw;
+    }
+
+    .todo-container{
+        display: flex;
+        justify-content: space-evenly;
+        width:80%;
+    }
+
+    .todo-list-container{
+        padding:1.5%;
+        text-align: center;
+        border:var(--border);
+        height:var(--todo-list-contanier-height);
+        width: 30vw;
+        border-radius: 0.75em;
+        background-color:var(--menu-header-color);
+        margin-bottom: 1em;
+        opacity: 0;
+        transition: all 200ms ease;
+    }
+
+    .todo__btn{
+        font-size: 1.6em;
+        width:var(--menu-todo-btn-size);
+        height: var(--menu-todo-btn-size);
+    }
+
+    .movie{
+        left:25%;
+        width: 80%;
+    }
+
+    .follow-btns__header{
+        font-size:0.3em;
+    }
+
+    .movie__scene,
+    .movie__illust{
+        height: 15%;
+    }
+
+    .scene__wrapper,
+    .illust__wrapper{
+        width:calc(var(--photo-width)*2);
     }
 }

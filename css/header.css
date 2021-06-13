@@ -1,3 +1,34 @@
+:root{
+    /*color*/
+    --sky-blue-color:#A5F7FF;
+    --white-color:#FFFFFF;
+    --black-color:#060400;
+    --player-color:#6683D9;
+    --menu-color:#5b4399;
+
+    /*size*/
+    --header-time-size:3.125em;
+    --header-name-size:1.875em;
+    --header-weather-size:1.125em;
+    --header-music-size:1em;
+    --menu-title-size:1.8em;
+    --menu-todo-btn-size:1.6em;
+    --menu-title-btn:2em;
+    --menu-item-btn:1.3em;
+    --todo-placeholder:0.85em;
+    --list-text-size:1.5em;
+    --title-size:7.5em;
+    --user-header-font:2.5em;
+    --player-font:1.3em;
+
+    --photo-width:25vw;
+    --photo-height:45vh;
+    
+    /*border*/
+    --border:2px solid var(--white-color);
+    --photo-border:4px solid;
+}
+
 .header{
     padding:1.5em;
     width: 100%;
@@ -28,50 +59,56 @@
 }
 
 .name-container{
-    width: 100%;
-    margin-left:50px;
+    width: 60%;
+    margin-left:3em;
     display: flex;
     align-self: center;
-    padding:0.75em;
+    padding:0.3em;
     transition: all 0.3s ease;
     border-radius:0.75em;
 }
 
-.name-container:hover{
-    background-color: var(--white-color);
-}
+
 
 
 .name{
     color: var(--white-color);
     font-size:var(--header-name-size);
+    border-radius:0.75em;
+    padding:0.2em;
+    border:var(--border);
+    width:100%;
+    text-align: center;
 }
 
-.name-container:hover .name{
+.name:hover{
+    background-color: var(--white-color);
     color:var(--player-color);
 }
 
 .name-form{
-    width: 100%;
+    width: var(--name-form);
     border:var(--border);
+    vertical-align: center;
     border-radius:0.75em;
-    padding:0.75em;
+    padding:0.2em;
 }
 
 .name-form:focus-within{
-    background-color: var(--menu-header-color);
+    background-color: var(--player-color);
 }
 
 .name-input{
     text-align: center;
     width: 100%;
     color:var(--white-color);
+    font-size:var(--name-input-font);
 }
 
 .name-input::placeholder{
     color:var(--white-color);
     text-align: center;
-    font-size: 1.25em;
+    font-size:var(--name-input-font);
 }
 
 .name-hide{
@@ -89,26 +126,31 @@
 .music{
     margin-right:0.5em;
     height: 80%;
-    width:50% ;
+    width:60% ;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .music__title{
+    width: 13vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
     color: var(--white-color);
     font-size: var(--header-music-size);
-    padding:0.3em;
+    padding:0.1em;
     border-radius: 1em;
     border:2px solid transparent;
     transition: all 0.3s ease;
+    border:var(--border);
 }
 
 .music:hover .music__title{
     background: var(--white-color);
     color: var(--player-color);
     font-weight: bold;
-    border:var(--border);
 }
 
 .music__btns{
@@ -126,10 +168,11 @@
 }
 .music__btn{
     color:var(--white-color);
-    font-size:0.5em;
-    padding:0.5em;
-    width:2.5em;
-    height: 2.5em;
+    border: var(--border);
+    font-size:var(--music-btn-icon);
+    padding:0.1em;
+    width:var(--music-btn-size);
+    height: var(--music-btn-size);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -141,11 +184,11 @@
 .redo-btn,
 .random-btn{
     opacity: 0.6;
-    font-size:0.5em;
     padding:6px;
 }
 
 .header__weather{
+    border:var(--border);
     font-size:var( --header-weather-size);
     padding:0.1em;
     border-radius: 0.75em;
