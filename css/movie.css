@@ -63,7 +63,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width:calc(var(--photo-width)*3 + 0.3em);
+    width:calc(var(--photo-width)*3);
     height: var(--photo-height);
     overflow-x: hidden;
 }
@@ -89,7 +89,6 @@
     display: inline-block;
     width:var(--photo-width);
     height:var(--photo-height);
-    margin:0 0.2em;
     border:var(--photo-border) transparent;
     border-radius: 1.7em;
     transition:all 0.3s ease;
