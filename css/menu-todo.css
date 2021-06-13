@@ -150,7 +150,7 @@
 
 .follow-btns-container{
     position: fixed;
-    top:90%;
+    top:85%;
     left:3%;
     display: flex;
     flex-direction: column;
