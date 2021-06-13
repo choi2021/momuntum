@@ -1,156 +1,192 @@
-'use strict';
+const pendingBtn = document.querySelector(".pending-btn");
+const finishedBtn = document.querySelector(".finished-btn");
+const pendingContainer=document.querySelector(".pending-container")
+const finishedContainer=document.querySelector(".finished-container")
 
-const pendingContainer = document.querySelector(".pending-lists");
-const finishedContainer = document.querySelector(".finished-lists");
-const pendingList = document.querySelector(".todo-lists__pending");
-const finishedList = document.querySelector(".todo-lists__finished");
+const todoForm = document.querySelector(".todo__form");
+const todoInput = document.querySelector(".todo__input");
+const pendingList = document.querySelector(".pending-list");
+const finishedList = document.querySelector(".finished-list");
 
-const todoForm = document.querySelector(".todo-form");
-const todoInput = document.querySelector(".todo-input");
 const PENDING_LS = "pending";
-const FINSISHED_LS = "finished";
+const FINISHED_LS = "finished"
+let PENDING_TODOS = [];
+let FINISHED_TODOS = [];
+let clickedPending = false;
+let clickedFinsihed = false;
 
-let PENDING = [];
-let FINISHED = [];
-let loaded = false;
-
-function saveTodo(kind) {
-    if (kind === PENDING) {
-        localStorage.setItem(PENDING_LS,JSON.stringify(kind))
+function onClickPendingBtn() {
+    if (!clickedPending) {
+        showPending();
+        clickedPending = true;
     } else {
-        localStorage.setItem(FINSISHED_LS,JSON.stringify(kind))
+        hidePending();
+        clickedPending = false;
     }
 }
 
-function animationTodo(item) {
-    if (item === 'pending') {
-        putAnimation(pendingContainer);
-    } else if (item === 'finished') {
-        putAnimation(finishedContainer);
+function onClickFinishedBtn() {
+    if (!clickedFinsihed) {
+        showFinished();
+        clickedFinsihed = true;
+    } else {
+        hideFinished();
+        clickedFinsihed = false;
     }
 }
 
-function putAnimation(container) {
-    container.classList.add("todo-getanimation");
-    setTimeout(() => {
-        container.classList.remove("todo-getanimation"); 
-    }, 1000);
+function showPending() {
+    pendingContainer.style.opacity = `1`;
 }
 
-function updateTodo(array,text,id) {
-    const obj = {
-        text:text,
-        id: id
-    }
-    array.push(obj);
+function hidePending() {
+    pendingContainer.style.opacity = `0`;
 }
 
-function updatePending(text) {
-    const pendingId = PENDING.length + 1;
-    const li = document.createElement("li");
-    li.setAttribute("class", "pending__list");
-    li.id = pendingId;
-    li.innerHTML =`
-    <span class="todo__text">${text}</span>
-    <div>
-        <button class="todo__delete-btn" id="${pendingId}">❌</button>
-        <button class="todo__finish-btn" id="${pendingId}">👍</button>
-    </div>`
-    pendingList.appendChild(li);
-    updateTodo(PENDING,text,pendingId)
-    saveTodo(PENDING);
-    if (loaded) {
-        animationTodo('pending');
-    }
-    addScrollView(pendingList);
+function showFinished() {
+    finishedContainer.style.opacity = `1`;
 }
 
-function updateFinished(text) {
-    const finishedId = FINISHED.length + 1;
-    const li = document.createElement("li");
-    li.setAttribute("class", "finished__list");
-    li.id = finishedId;
-    li.innerHTML =`
-    <span class="todo__text">${text}</span>
-    <div>
-        <button class="todo__delete-btn" id="${finishedId}">❌</button>
-    </div>`
-    finishedList.appendChild(li);
-    updateTodo(FINISHED,text,finishedId)
-    saveTodo(FINISHED);
-    if (loaded) {
-        animationTodo('finished');
-    }
-    addScrollView(pendingList);
+function hideFinished() {
+    finishedContainer.style.opacity = `0`;
 }
 
 function onSubmit(event) {
     event.preventDefault();
-    loaded = true;
-    const todo = todoInput.value;
-    if (todo ==='') {
-        return;
-    }
-    updatePending(todo);
+    const currentTodo = todoInput.value;
+    showPendingTodo(currentTodo);
     todoInput.value = '';
 }
 
-function onClickPendingBtn(event) {
-    const id = event.target.id;
-    const list = pendingList.querySelector(`.pending__list[id="${id}"]`);
-    if (!id) {
-        return;
-    } else {
-        if (event.target.matches(".todo__delete-btn")) {
-            list.remove();
-            pendingUpdate(parseInt(list.id));
-        } else{
-            const text = list.querySelector(".todo__text").innerText;
-            updateFinished(text);
-            list.remove();
-            pendingUpdate(parseInt(list.id));
-            animationTodo('finished');
-            addScrollView(finishedList);
-        }
+function showPendingTodo(text) {
+    const id = PENDING_TODOS.length+1;
+    const todo = makePendingTodo(text,id);
+    todo.setAttribute("class", "todo-item pending-item");
+    todo.id = id;
+    pendingList.appendChild(todo);
+    const todoObj = {
+        id,
+        text,
     }
+    PENDING_TODOS.push(todoObj);
+    savePendingTodo(todoObj);
 }
 
-function pendingUpdate(num) {
-    const filtered = PENDING.filter(todo => {
-        return todo.id != num;
-    });
-    PENDING = filtered;
-    saveTodo(PENDING);
+function showFinishedTodo(text) {
+    const id = FINISHED_TODOS.length+1;
+    const todo = makeFinishedTodo(text,id);
+    todo.setAttribute("class", "todo-item finished-item");
+    todo.id = id;
+    finishedList.appendChild(todo);
+    const todoObj = {
+        id,
+        text,
+    }
+    FINISHED_TODOS.push(todoObj);
+    saveFinishedTodo(todoObj);
 }
 
-function onClickFinishedBtn(event) {
-    const id = event.target.id;
-    if (!id) {
+function makePendingTodo(text,id) {
+    const li = document.createElement("li");
+    li.innerHTML =
+        `<span class="todo-text">${text}</span>
+        <div class="todo-btns">
+            <button class="todo-list-btn todo-del-btn" data-item="delete" data-id="${id}">x</button>
+            <button class="todo-list-btn todo-finished-btn"><i class="far fa-thumbs-up todo-finished-btn" data-item="finished" data-id="${id}"></i></button>
+        </div>`
+    return li;
+}
+
+function makeFinishedTodo(text,id) {
+    const li = document.createElement("li");
+    li.innerHTML =
+        `<span class="todo-text">${text}</span>
+        <div class="todo-btns">
+            <button class="todo-list-btn todo-back-btn"><i class="fas fa-arrow-left" data-item="back" data-id="${id}"></i></button>
+            <button class="todo-list-btn todo-del-btn" data-item="delete" data-id="${id}">x</button>
+        </div>`
+    return li;
+}
+
+function savePendingTodo() {
+    localStorage.setItem(PENDING_LS, JSON.stringify(PENDING_TODOS));
+}
+
+function saveFinishedTodo() {
+    localStorage.setItem(FINISHED_LS, JSON.stringify(FINISHED_TODOS));
+}
+
+function onClickPending(event) {
+    const target = event.target;
+    const dataset = target.dataset;
+    const item = dataset.item;
+    const id = dataset.id;
+    if (item === undefined) {
         return;
-    } else {
-        const list = finishedList.querySelector(`.finished__list[id="${id}"]`);
-        list.remove();
-        const filtered = FINISHED.filter(todo => {
-            return todo.id != parseInt(list.id);
+    } else if (item==="delete") {
+        const li = document.querySelector(`.pending-item[id="${id}"]`);
+        const filterd = PENDING_TODOS.filter(todo => {
+            return todo.id !== parseInt(id);
         });
-        FINISHED = filtered;
-        saveTodo(FINISHED);
+        console.log(filterd);
+        PENDING_TODOS = filterd;
+        savePendingTodo();
+        li.remove();
+    } else {
+        const li = document.querySelector(`.pending-item[id="${id}"]`);
+        const text = document.querySelector(`.pending-item[id="${id}"] span`).innerText;
+        showFinishedTodo(text)
+        const filterd = PENDING_TODOS.filter(todo => {
+            return todo.id !== parseInt(id);
+        });
+        PENDING_TODOS = filterd;
+        savePendingTodo();
+        li.remove();
     }
 }
 
-function addScrollView(list) {
-    list.scrollIntoView();
+function onClickFinished(event) {
+    const target = event.target;
+    const dataset = target.dataset;
+    const item = dataset.item;
+    const id = dataset.id;
+    console.log(item);
+    if (item === undefined) {
+        return;
+    } else if (item==="delete") {
+        const li = document.querySelector(`.finished-item[id="${id}"]`);
+        const filterd = FINISHED_TODOS.filter(todo => {
+            return todo.id !== parseInt(id);
+        });
+        console.log(filterd);
+        FINISHED_TODOS = filterd;
+        saveFinishedTodo();
+        li.remove();
+    } else {
+        const li = document.querySelector(`.finished-item[id="${id}"]`);
+        const text = document.querySelector(`.finished-item[id="${id}"] span`).innerText;
+        console.log(text);
+        showPendingTodo(text)
+        const filterd = FINISHED_TODOS.filter(todo => {
+            return todo.id !== parseInt(id);
+        });
+        FINISHED_TODOS = filterd;
+        saveFinishedTodo();
+        li.remove();
+    }
 }
 
-
+pendingBtn.addEventListener("click", onClickPendingBtn);
+finishedBtn.addEventListener("click", onClickFinishedBtn);
 const loadedPending = localStorage.getItem(PENDING_LS);
-const loadedFinished = localStorage.getItem(FINSISHED_LS);
-if (loadedPending !== null || loadedFinished !== null) {
+const loadedFinished=localStorage.getItem(FINISHED_LS);
+if (loadedPending !== null||loadedFinished!==null) {
     const parsedPending = JSON.parse(loadedPending);
     const parsedFinished = JSON.parse(loadedFinished);
-    parsedPending && parsedPending.forEach(todo => updatePending(todo.text));
-    parsedFinished && parsedFinished.forEach(todo => updateFinished(todo.text));
-}
+    parsedPending&&parsedPending.forEach(todo => showPendingTodo(todo.text))
+    parsedFinished&&parsedFinished.forEach(todo => showFinishedTodo(todo.text))
+};
 todoForm.addEventListener("submit", onSubmit);
-pendingList.addEventListener("click", onClickPendingBtn);
-finishedList.addEventListener("click", onClickFinishedBtn);
+pendingList.addEventListener("click", onClickPending);
+finishedList.addEventListener("click",onClickFinished)
+

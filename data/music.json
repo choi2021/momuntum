@@ -1,0 +1,34 @@
+{
+    "music":[{
+        "title":"A lovely Night",
+        "song":"music/a lovely night.mp3"
+    },{
+        "title":"Another days Of Sun",
+        "song":"music/another days of sun.mp3"
+    },{
+        "title":"Audition",
+        "song":"music/Audition.mp3"
+    },{
+        "title":"City Of Stars",
+        "song":"music/city of stars.mp3"
+    },{
+        "title":"Herman's Habit",
+        "song":"music/Herman's Habit.mp3"
+    },{
+        "title":"Mia Sebastians theme",
+        "song":"music/Mia  Sebastians Theme  La La Land OST.mp3"
+    },{
+        "title":"Planetarium",
+        "song":"music/planetarium.mp3"
+    },{
+        "title":"Someone In the Crowd",
+        "song":"music/Someone In The Crowd.mp3"
+    },{
+        "title":"Start a Fire",
+        "song":"music/Start a Fire.mp3"
+    },{
+        "title":"Summer Montage",
+        "song":"music/Summer Montage  Madeline.mp3"
+    }
+    ]
+}

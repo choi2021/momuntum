@@ -1,4 +1,4 @@
-const timeContainer = document.querySelector(".time-container");
+const timeContainer = document.querySelector(".header__time");
 
 function getTime() {
     const date = new Date();

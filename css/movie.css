@@ -1,0 +1,133 @@
+
+
+.movie{
+    position: absolute;
+    top:45%;
+    left:13%;
+    padding: 2%;
+    width: 88%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.movie__header__icon{
+    font-size:var(--movie-header-icon);
+    padding:0.3em;
+    border-radius: 50%;
+    color:var(--white-color);
+}
+
+.movie__header__text{
+    font-size:var(--movie-header-icon);
+    color:var(--white-color);
+}
+
+.movie__scene,
+.movie__illust{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    padding:1.5%;
+    height: 20%;
+    width: 100%;
+    margin-bottom:50vh;
+}
+
+.scene__header,
+.illust__header{
+    font-size:var(--movie-content-header);
+    color:var(--white-color);
+    margin:0.5em;
+}
+
+.scene__content,
+.illust__content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.scene__slider-btn,
+.illust__slider-btn{
+    font-size:1.3em;
+    color:white;
+}
+
+.scene__wrapper,
+.illust__wrapper{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:calc(var(--photo-width)*3);
+    height: var(--photo-height);
+    overflow-x: hidden;
+}
+
+.scene__slider,
+.illust__slider{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition:transform 0.3s ease-in-out;
+}
+
+.scene__slider__item,
+.illust__slider__item{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.scene__photo,
+.illust__photo{
+    display: inline-block;
+    width:var(--photo-width);
+    height:var(--photo-height);
+    border:var(--photo-border) transparent;
+    border-radius: 1.7em;
+    transition:all 0.3s ease;
+}
+
+
+.scene__photo:hover,
+.illust__photo:hover{
+    border:var(--photo-border) var(--white-color);
+}
+
+.photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5em;
+}
+
+.scene__btns,
+.illust__btns{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+input[type="radio"],
+input[type="radio"]:checked{
+    appearance: none;
+    width:var(--radio-size);
+    height: var(--radio-size);
+    border-radius: 50%;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+input[type="radio"]{
+    background-color: var(--white-color);
+    border: var(--border);
+}
+
+input[type="radio"]:checked{
+    background-color: var(--player-color);
+}

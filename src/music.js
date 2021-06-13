@@ -1,155 +1,165 @@
-const musicImgContainer = document.querySelector(".music-img-container");
-const btns=document.querySelector(".music-btns")
+const musicTitle = document.querySelector(".music__title");
+const musicBtns = document.querySelector(".music__btns");
 
-
+let setList = [];
 let played = false;
-let setlist = [];
-let songNumber = 0;
-let song = undefined;
+let position = 0;
 
-function getMusic(){
-    return fetch("./music.json")
-        .then(response => response.json())
-        .then(json =>json.music);
+function loadMusic() {
+    return fetch(`data/music.json`)
+        .then(response=>response.json())
 }
 
-function updateSetlist(num, music) {
-    getRandomArray(num);
-    setlist = setlist.map(num => music[num])
-        .map(item => {
-        const sound = getSong(item.song);
-        const img = getImg(item.img);
-        const setlistObj = {
-            sound: sound,
-            img: img
-        }
-        return setlistObj;
-    });
-}
-
-function getRandomNum(num) {
-    return Math.floor(num * Math.random());
-}
-
-function getRandomArray(num) {
-    for (let i = 0; i < num; i++){
-        const rand = getRandomNum(num);
-        if (setlist.includes(rand)) {
-            i--;
+function prepareSetlist(music) {
+    for (let i = 0; i < music.length; i++){
+        const randomNum = getRandom(music.length);
+        const text = music[randomNum].title;
+        const musicUrl = music[randomNum].song;
+        const song = setSong(musicUrl);
+        const map = setList.map(item => item.text);
+        if (map.includes(text)) {
+            i--
             continue;
         }
-        setlist.push(rand);
+        const obj = {
+            text,
+            song
+        }
+        setList.push(obj);
     }
 }
 
-function getSong(url) {
-    const song = new Audio();
-    song.src = url;
-    song.volume = 0.4;
+function resetSetlist(prev) {
+    console.log(prev);
+    for (let i = 0; i < prev.length; i++){
+        const randomNum = getRandom(prev.length);
+        const text = prev[randomNum].text;
+        const song = prev[randomNum].song;
+        const map = setList.map(item => item.text);
+        if (map.includes(text)) {
+            i--
+            continue;
+        }
+        const obj = {
+            text,
+            song
+        }
+        setList.push(obj);
+    }
+}
+
+function getRandom(num) {
+    return Math.floor(Math.random() * num);
+}
+
+function setSong(url) {
+    const song = new Audio(`${url}`);
+    song.addEventListener("ended", onEndSong);
     return song;
 }
 
-function getImg(url) {
-    const img = new Image();
-    img.setAttribute("class", "music-img");
-    img.src = url;
-    return img;
+function onEndSong() {
+    position++;
+    showTitle();
+    playSong();
 }
 
-function setImg() {
-    musicImgContainer.innerHTML = ``;
-    const image = setlist[songNumber].img;
-    musicImgContainer.appendChild(image);
-}
-
-function setSong() {
-    song = setlist[songNumber].sound;
+function showTitle() {
+    const text = setList[position].text;
+    musicTitle.innerText = `${text}`;
 }
 
 function onClickBtns(event) {
     const target = event.target;
-    const dataId = target.dataset.id;
-    if (dataId === undefined) {
+    const dataSet = target.dataset;
+    const value = dataSet.value;
+    if (value === undefined) {
         return;
     }
-    switch (dataId) {
-        case "play-btn":
-            target.addEventListener("click", onClickPlay);
+    switch (value) {
+        case "redo":
+            toggleLoop();
             break;
-        case "forward-btn":
-            target.addEventListener("click", onClickForward);
+        case "backward":
+            stopSong();
+            position--
+            if (position < 0) {
+                position = setList.length - 1;
+            }
+            showTitle();
+            if (played) {
+                playSong();
+            }
             break;
-        case "backward-btn":
-            target.addEventListener("click", onClickBackward);
+        case "play":
+            const icon = document.querySelector(".play");
+            if (!played) {
+                playSong();
+                icon.classList.remove("fa-play");
+                icon.classList.add("fa-stop");
+                played = true;
+            } else {
+                stopSong();
+                icon.classList.remove("fa-stop");
+                icon.classList.add("fa-play");
+                played = false;
+            }
+            break;
+        case "forward":
+            stopSong();
+            position++
+            if (position > setList.length-1) {
+                position=0
+            }
+            showTitle();
+            if (played) {
+                playSong();
+            }
+            break;
+        case "refresh":
+            stopSong();
+            const prevSetlist = setList;
+            setList = [];
+            resetSetlist(prevSetlist);
+            showTitle();
+            if (played) {
+                playSong();
+            }
             break;
         default:
-            throw new Error(`Wrong key`);
+            throw Error('you clicked wrong btn');
     }
 }
 
-function onClickPlay() {
-    setSong();
-    const icon = document.querySelector(`i[data-id=play-btn]`);
-    if (!played) {
-        icon.classList.remove("fa-play");
-        icon.classList.add("fa-stop");
-        playSong(song);
-        played = true;
-    } else {
-        icon.classList.remove("fa-stop");
-        icon.classList.add("fa-play");
-        stopSong(song);
-        played = false;
-    }
-}
-
-function playSong(song) {
+function playSong() {
+    const song = setList[position].song;
     song.play();
 }
 
-function stopSong(song) {
+function stopSong() {
+    const song = setList[position].song;
     song.pause();
 }
 
-function onClickForward() {
-    songNumber++;
-    if (songNumber > setlist.length - 1) {
-        songNumber = 0;
-    }
-    if (played) {
-        stopSong(song);
-        setSong();
-        setImg();
-        playSong(song);
-    } else if(!played) {
-        setSong();
-        setImg();   
+function toggleLoop() {
+    const song = setList[position].song;
+    const redoBtn = document.querySelector(".redo-btn");
+    if (!song.hasAttribute("loop")) {
+        song.setAttribute("loop", "loop");
+        redoBtn.style.opacity = `1`;
+        console.log("looped")
+    } else {
+        song.removeAttribute("loop");
+        redoBtn.style.opacity = `0.7`;
+        console.log("unlooped");
     }
 }
 
-function onClickBackward() {
-    songNumber--;
-    if (songNumber < 0) {
-        songNumber = setlist.length - 1;
-    }
-    if (played) {
-        stopSong(song);
-        setSong();
-        setImg();
-        playSong(song);
-    } else if(!played) {
-        setSong();
-        setImg();   
-    }
-}
+loadMusic()
+    .then(json => {
+        const music=json.music;
+        prepareSetlist(music);
+        showTitle();
+        musicBtns.addEventListener("click", onClickBtns);
 
-getMusic()
-    .then(music => {
-        const totalNumber = music.length;
-        updateSetlist(totalNumber, music);
-        setImg();
-        btns.addEventListener("click", onClickBtns)
-    });        
-
-
-    
+    });
