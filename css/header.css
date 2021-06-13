@@ -89,7 +89,6 @@
 .name-form{
     width: var(--name-form);
     border:var(--border);
-    vertical-align: center;
     border-radius:0.75em;
     padding:0.2em;
 }
@@ -190,7 +189,7 @@
 .header__weather{
     border:var(--border);
     font-size:var( --header-weather-size);
-    padding:0.1em;
+    padding:0.2em;
     border-radius: 0.75em;
     display: flex;
     flex-direction: column;
