@@ -915,8 +915,8 @@ body{
 
     --movie-header-icon:1em;
     --movie-content-header:1em;
-    --photo-width:28vw;
-    --photo-height:17vh;
+    --photo-width:26vw;
+    --photo-height:14vh;
 
     --follow-btn:1em;
     --follow-btn-icon:0.7em;
@@ -967,7 +967,7 @@ body{
     }
 
     .header__weather{
-        width:60%;
+        width:70%;
     }
     
     .menu{
